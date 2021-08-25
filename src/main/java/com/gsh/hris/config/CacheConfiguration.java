@@ -1,7 +1,8 @@
 package com.gsh.hris.config;
 
-import java.time.Duration;
-import org.ehcache.config.builders.*;
+import org.ehcache.config.builders.CacheConfigurationBuilder;
+import org.ehcache.config.builders.ExpiryPolicyBuilder;
+import org.ehcache.config.builders.ResourcePoolsBuilder;
 import org.ehcache.jsr107.Eh107Configuration;
 import org.hibernate.cache.jcache.ConfigSettings;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,12 @@ import org.springframework.boot.info.BuildProperties;
 import org.springframework.boot.info.GitProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import tech.jhipster.config.JHipsterProperties;
 import tech.jhipster.config.cache.PrefixedKeyGenerator;
+
+import java.time.Duration;
 
 @Configuration
 @EnableCaching
@@ -48,6 +52,33 @@ public class CacheConfiguration {
             createCache(cm, com.gsh.hris.domain.User.class.getName());
             createCache(cm, com.gsh.hris.domain.Authority.class.getName());
             createCache(cm, com.gsh.hris.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.gsh.hris.domain.Employee.class.getName());
+            createCache(cm, com.gsh.hris.domain.Employee.class.getName() + ".positions");
+            createCache(cm, com.gsh.hris.domain.Employee.class.getName() + ".dutySchedules");
+            createCache(cm, com.gsh.hris.domain.Employee.class.getName() + ".dailyTimeRecords");
+            createCache(cm, com.gsh.hris.domain.Employee.class.getName() + ".benefits");
+            createCache(cm, com.gsh.hris.domain.Employee.class.getName() + ".dependents");
+            createCache(cm, com.gsh.hris.domain.Employee.class.getName() + ".educations");
+            createCache(cm, com.gsh.hris.domain.Employee.class.getName() + ".trainingHistories");
+            createCache(cm, com.gsh.hris.domain.Employee.class.getName() + ".leaves");
+            createCache(cm, com.gsh.hris.domain.Cluster.class.getName());
+            createCache(cm, com.gsh.hris.domain.Cluster.class.getName() + ".departments");
+            createCache(cm, com.gsh.hris.domain.Department.class.getName());
+            createCache(cm, com.gsh.hris.domain.Department.class.getName() + ".employees");
+            createCache(cm, com.gsh.hris.domain.EmploymentType.class.getName());
+            createCache(cm, com.gsh.hris.domain.EmploymentType.class.getName() + ".employees");
+            createCache(cm, com.gsh.hris.domain.Position.class.getName());
+            createCache(cm, com.gsh.hris.domain.DutySchedule.class.getName());
+            createCache(cm, com.gsh.hris.domain.DailyTimeRecord.class.getName());
+            createCache(cm, com.gsh.hris.domain.Benefits.class.getName());
+            createCache(cm, com.gsh.hris.domain.Dependents.class.getName());
+            createCache(cm, com.gsh.hris.domain.Education.class.getName());
+            createCache(cm, com.gsh.hris.domain.TrainingHistory.class.getName());
+            createCache(cm, com.gsh.hris.domain.Leave.class.getName());
+            createCache(cm, com.gsh.hris.domain.LeaveType.class.getName());
+            createCache(cm, com.gsh.hris.domain.LeaveType.class.getName() + ".leaves");
+            createCache(cm, com.gsh.hris.domain.Holiday.class.getName());
+            createCache(cm, com.gsh.hris.domain.HolidayType.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

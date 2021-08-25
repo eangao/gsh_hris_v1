@@ -43,6 +43,24 @@
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["en", "fr"],
-    "cypressCoverage": false
+    "cypressCoverage": false,
+    "entities": [
+      "Employee",
+      "Cluster",
+      "Department",
+      "EmploymentType",
+      "Position",
+      "DutySchedule",
+      "DailyTimeRecord",
+      "Benefits",
+      "Dependents",
+      "Education",
+      "TrainingHistory",
+      "Leave",
+      "LeaveType",
+      "Holiday",
+      "HolidayType"
+    ],
+    "lastLiquibaseTimestamp": 1629783562000
   }
 }
