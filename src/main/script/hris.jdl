@@ -1,0 +1,133 @@
+// ENTITIES:
+entity Employee {	
+	employeeId Integer
+    firstName String maxlength(100)
+    middleName String  maxlength(100)
+    lastName String  maxlength(100)
+    nameSuffix String maxlength(20)
+    birthdate LocalDate
+    mobileNumber String
+    isNotLocked Boolean
+    dateHired LocalDate
+    dateDeno LocalDate
+    sickLeaveYearlyCredit Integer
+    sickLeaveYearlyCreditUsed Integer
+    leaveYearlyCredit Integer
+    leaveYearlyCreditUsed Integer
+}
+
+entity Cluster {
+	name String maxlength(100)
+}
+
+entity Department {
+	name String maxlength(100)
+}
+
+entity EmploymentType {
+	name String maxlength(50)   
+}
+
+entity Position {
+	name String
+}
+
+entity DutySchedule {
+	dateTimeIn Instant
+    dateTimeOut Instant     
+}
+
+entity DailyTimeRecord {
+	dateTimeIn Instant
+    dateTimeOut Instant     
+}
+
+entity Benefits {
+	name String maxlength(60)
+}
+
+entity Dependents {
+	firstName String
+    lastName String
+    relation String
+}
+
+entity Education {
+	bachelorDegree String
+    yearGraduated Integer
+    school String
+}
+
+entity TrainingHistory {
+	trainingName String
+    trainingDate LocalDate
+}
+
+entity Leave {
+	dateApply LocalDate required
+    dateStart LocalDate	required
+    dateEnd LocalDate required
+    dateReturn LocalDate required	
+    checkupDate LocalDate	
+    convalescingPeriod Integer	
+    diagnosis TextBlob
+    physician String
+}
+
+entity LeaveType {
+	name String
+    description String
+}
+
+entity Holiday {
+	name String
+    date LocalDate
+}
+
+entity HolidayType {
+	name String    
+}
+
+// RELATIONSHIPS:
+relationship OneToOne{
+	Employee{user(id) required} to User
+}
+
+relationship OneToMany{
+	Cluster{department} to Department{cluster(name) required}
+    Department to Employee{department(name) required}
+    EmploymentType to Employee{employmentType(name) required}
+    Employee to Position{employee(id) required}
+    Employee to DutySchedule{employee(id) }
+    Employee to DailyTimeRecord{employee(id) }
+    Employee to Benefits{employee(id) }
+    Employee to Dependents{employee(id) }  
+    Employee to Education{employee(id) }
+    Employee to TrainingHistory{employee(id) }    
+    Employee to Leave{employee(id) } 
+    LeaveType to Leave{leaveType(name) }    
+}
+
+
+// SET PAGINATION OPTIONS:
+paginate all with pagination
+// paginate ChatMessage with infinite-scroll
+// paginate all with infinite-scroll
+
+// SET SERVICE OPTIONS:
+service all with serviceImpl
+//service all with serviceClass
+
+// DTO:
+dto all with mapstruct
+
+// FILTERING:
+filter *
+
+
+
+
+
+
+
+

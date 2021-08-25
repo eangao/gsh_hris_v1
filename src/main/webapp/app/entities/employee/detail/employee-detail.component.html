@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="employee">
+      <h2 data-cy="employeeDetailsHeading"><span>Employee</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ employee.id }}</span>
+        </dd>
+        <dt><span>Employee Id</span></dt>
+        <dd>
+          <span>{{ employee.employeeId }}</span>
+        </dd>
+        <dt><span>First Name</span></dt>
+        <dd>
+          <span>{{ employee.firstName }}</span>
+        </dd>
+        <dt><span>Middle Name</span></dt>
+        <dd>
+          <span>{{ employee.middleName }}</span>
+        </dd>
+        <dt><span>Last Name</span></dt>
+        <dd>
+          <span>{{ employee.lastName }}</span>
+        </dd>
+        <dt><span>Name Suffix</span></dt>
+        <dd>
+          <span>{{ employee.nameSuffix }}</span>
+        </dd>
+        <dt><span>Birthdate</span></dt>
+        <dd>
+          <span>{{ employee.birthdate | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Mobile Number</span></dt>
+        <dd>
+          <span>{{ employee.mobileNumber }}</span>
+        </dd>
+        <dt><span>Is Not Locked</span></dt>
+        <dd>
+          <span>{{ employee.isNotLocked }}</span>
+        </dd>
+        <dt><span>Date Hired</span></dt>
+        <dd>
+          <span>{{ employee.dateHired | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Date Deno</span></dt>
+        <dd>
+          <span>{{ employee.dateDeno | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Sick Leave Yearly Credit</span></dt>
+        <dd>
+          <span>{{ employee.sickLeaveYearlyCredit }}</span>
+        </dd>
+        <dt><span>Sick Leave Yearly Credit Used</span></dt>
+        <dd>
+          <span>{{ employee.sickLeaveYearlyCreditUsed }}</span>
+        </dd>
+        <dt><span>Leave Yearly Credit</span></dt>
+        <dd>
+          <span>{{ employee.leaveYearlyCredit }}</span>
+        </dd>
+        <dt><span>Leave Yearly Credit Used</span></dt>
+        <dd>
+          <span>{{ employee.leaveYearlyCreditUsed }}</span>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+          <span>{{ employee.user?.id }}</span>
+        </dd>
+        <dt><span>Department</span></dt>
+        <dd>
+          <div *ngIf="employee.department">
+            <a [routerLink]="['/department', employee.department?.id, 'view']">{{ employee.department?.name }}</a>
+          </div>
+        </dd>
+        <dt><span>Employment Type</span></dt>
+        <dd>
+          <div *ngIf="employee.employmentType">
+            <a [routerLink]="['/employment-type', employee.employmentType?.id, 'view']">{{ employee.employmentType?.name }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/employee', employee.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

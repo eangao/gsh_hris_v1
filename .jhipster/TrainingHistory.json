@@ -1,0 +1,32 @@
+{
+  "name": "TrainingHistory",
+  "fields": [
+    {
+      "fieldName": "trainingName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trainingDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "trainingHistory",
+      "relationshipName": "employee",
+      "otherEntityField": "id"
+    }
+  ],
+  "entityTableName": "training_history",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210824053918"
+}

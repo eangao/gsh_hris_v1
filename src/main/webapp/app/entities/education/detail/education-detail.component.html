@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="education">
+      <h2 data-cy="educationDetailsHeading"><span>Education</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ education.id }}</span>
+        </dd>
+        <dt><span>Bachelor Degree</span></dt>
+        <dd>
+          <span>{{ education.bachelorDegree }}</span>
+        </dd>
+        <dt><span>Year Graduated</span></dt>
+        <dd>
+          <span>{{ education.yearGraduated }}</span>
+        </dd>
+        <dt><span>School</span></dt>
+        <dd>
+          <span>{{ education.school }}</span>
+        </dd>
+        <dt><span>Employee</span></dt>
+        <dd>
+          <div *ngIf="education.employee">
+            <a [routerLink]="['/employee', education.employee?.id, 'view']">{{ education.employee?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/education', education.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

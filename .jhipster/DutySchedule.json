@@ -1,0 +1,32 @@
+{
+  "name": "DutySchedule",
+  "fields": [
+    {
+      "fieldName": "dateTimeIn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateTimeOut",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "dutySchedule",
+      "relationshipName": "employee",
+      "otherEntityField": "id"
+    }
+  ],
+  "entityTableName": "duty_schedule",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210824053913"
+}

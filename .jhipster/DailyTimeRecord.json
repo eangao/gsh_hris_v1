@@ -1,0 +1,32 @@
+{
+  "name": "DailyTimeRecord",
+  "fields": [
+    {
+      "fieldName": "dateTimeIn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateTimeOut",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "dailyTimeRecord",
+      "relationshipName": "employee",
+      "otherEntityField": "id"
+    }
+  ],
+  "entityTableName": "daily_time_record",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210824053914"
+}

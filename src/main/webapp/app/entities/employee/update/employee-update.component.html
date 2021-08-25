@@ -1,0 +1,298 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-employee-heading" data-cy="EmployeeCreateUpdateHeading">Create or edit a Employee</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_employeeId">Employee Id</label>
+          <input
+            type="number"
+            class="form-control"
+            name="employeeId"
+            id="field_employeeId"
+            data-cy="employeeId"
+            formControlName="employeeId"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_firstName">First Name</label>
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+          <div *ngIf="editForm.get('firstName')!.invalid && (editForm.get('firstName')!.dirty || editForm.get('firstName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('firstName')?.errors?.maxlength">
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_middleName">Middle Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="middleName"
+            id="field_middleName"
+            data-cy="middleName"
+            formControlName="middleName"
+          />
+          <div *ngIf="editForm.get('middleName')!.invalid && (editForm.get('middleName')!.dirty || editForm.get('middleName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('middleName')?.errors?.maxlength">
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_lastName">Last Name</label>
+          <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
+          <div *ngIf="editForm.get('lastName')!.invalid && (editForm.get('lastName')!.dirty || editForm.get('lastName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('lastName')?.errors?.maxlength">
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_nameSuffix">Name Suffix</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nameSuffix"
+            id="field_nameSuffix"
+            data-cy="nameSuffix"
+            formControlName="nameSuffix"
+          />
+          <div *ngIf="editForm.get('nameSuffix')!.invalid && (editForm.get('nameSuffix')!.dirty || editForm.get('nameSuffix')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('nameSuffix')?.errors?.maxlength">
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_birthdate">Birthdate</label>
+          <div class="input-group">
+            <input
+              id="field_birthdate"
+              data-cy="birthdate"
+              type="text"
+              class="form-control"
+              name="birthdate"
+              ngbDatepicker
+              #birthdateDp="ngbDatepicker"
+              formControlName="birthdate"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="birthdateDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_mobileNumber">Mobile Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="mobileNumber"
+            id="field_mobileNumber"
+            data-cy="mobileNumber"
+            formControlName="mobileNumber"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_isNotLocked">Is Not Locked</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="isNotLocked"
+            id="field_isNotLocked"
+            data-cy="isNotLocked"
+            formControlName="isNotLocked"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_dateHired">Date Hired</label>
+          <div class="input-group">
+            <input
+              id="field_dateHired"
+              data-cy="dateHired"
+              type="text"
+              class="form-control"
+              name="dateHired"
+              ngbDatepicker
+              #dateHiredDp="ngbDatepicker"
+              formControlName="dateHired"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="dateHiredDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_dateDeno">Date Deno</label>
+          <div class="input-group">
+            <input
+              id="field_dateDeno"
+              data-cy="dateDeno"
+              type="text"
+              class="form-control"
+              name="dateDeno"
+              ngbDatepicker
+              #dateDenoDp="ngbDatepicker"
+              formControlName="dateDeno"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="dateDenoDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_sickLeaveYearlyCredit">Sick Leave Yearly Credit</label>
+          <input
+            type="number"
+            class="form-control"
+            name="sickLeaveYearlyCredit"
+            id="field_sickLeaveYearlyCredit"
+            data-cy="sickLeaveYearlyCredit"
+            formControlName="sickLeaveYearlyCredit"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_sickLeaveYearlyCreditUsed">Sick Leave Yearly Credit Used</label>
+          <input
+            type="number"
+            class="form-control"
+            name="sickLeaveYearlyCreditUsed"
+            id="field_sickLeaveYearlyCreditUsed"
+            data-cy="sickLeaveYearlyCreditUsed"
+            formControlName="sickLeaveYearlyCreditUsed"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_leaveYearlyCredit">Leave Yearly Credit</label>
+          <input
+            type="number"
+            class="form-control"
+            name="leaveYearlyCredit"
+            id="field_leaveYearlyCredit"
+            data-cy="leaveYearlyCredit"
+            formControlName="leaveYearlyCredit"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_leaveYearlyCreditUsed">Leave Yearly Credit Used</label>
+          <input
+            type="number"
+            class="form-control"
+            name="leaveYearlyCreditUsed"
+            id="field_leaveYearlyCreditUsed"
+            data-cy="leaveYearlyCreditUsed"
+            formControlName="leaveYearlyCreditUsed"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user">
+            <option *ngIf="!editForm.get('user')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption"
+              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
+            >
+              {{ userOption.id }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['user'])!.invalid && (editForm.get(['user'])!.dirty || editForm.get(['user'])!.touched)">
+          <small class="form-text text-danger" *ngIf="editForm.get(['user'])?.errors?.required"> This field is required. </small>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_department">Department</label>
+          <select class="form-control" id="field_department" data-cy="department" name="department" formControlName="department">
+            <option *ngIf="!editForm.get('department')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="
+                departmentOption.id === editForm.get('department')!.value?.id ? editForm.get('department')!.value : departmentOption
+              "
+              *ngFor="let departmentOption of departmentsSharedCollection; trackBy: trackDepartmentById"
+            >
+              {{ departmentOption.name }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="editForm.get(['department'])!.invalid && (editForm.get(['department'])!.dirty || editForm.get(['department'])!.touched)"
+        >
+          <small class="form-text text-danger" *ngIf="editForm.get(['department'])?.errors?.required"> This field is required. </small>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_employmentType">Employment Type</label>
+          <select
+            class="form-control"
+            id="field_employmentType"
+            data-cy="employmentType"
+            name="employmentType"
+            formControlName="employmentType"
+          >
+            <option *ngIf="!editForm.get('employmentType')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="
+                employmentTypeOption.id === editForm.get('employmentType')!.value?.id
+                  ? editForm.get('employmentType')!.value
+                  : employmentTypeOption
+              "
+              *ngFor="let employmentTypeOption of employmentTypesSharedCollection; trackBy: trackEmploymentTypeById"
+            >
+              {{ employmentTypeOption.name }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="
+            editForm.get(['employmentType'])!.invalid &&
+            (editForm.get(['employmentType'])!.dirty || editForm.get(['employmentType'])!.touched)
+          "
+        >
+          <small class="form-text text-danger" *ngIf="editForm.get(['employmentType'])?.errors?.required"> This field is required. </small>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

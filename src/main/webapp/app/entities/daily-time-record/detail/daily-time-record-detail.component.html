@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dailyTimeRecord">
+      <h2 data-cy="dailyTimeRecordDetailsHeading"><span>Daily Time Record</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ dailyTimeRecord.id }}</span>
+        </dd>
+        <dt><span>Date Time In</span></dt>
+        <dd>
+          <span>{{ dailyTimeRecord.dateTimeIn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Date Time Out</span></dt>
+        <dd>
+          <span>{{ dailyTimeRecord.dateTimeOut | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Employee</span></dt>
+        <dd>
+          <div *ngIf="dailyTimeRecord.employee">
+            <a [routerLink]="['/employee', dailyTimeRecord.employee?.id, 'view']">{{ dailyTimeRecord.employee?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/daily-time-record', dailyTimeRecord.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

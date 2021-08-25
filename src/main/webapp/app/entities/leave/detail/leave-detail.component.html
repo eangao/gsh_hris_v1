@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="leave">
+      <h2 data-cy="leaveDetailsHeading"><span>Leave</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ leave.id }}</span>
+        </dd>
+        <dt><span>Date Apply</span></dt>
+        <dd>
+          <span>{{ leave.dateApply | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Date Start</span></dt>
+        <dd>
+          <span>{{ leave.dateStart | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Date End</span></dt>
+        <dd>
+          <span>{{ leave.dateEnd | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Date Return</span></dt>
+        <dd>
+          <span>{{ leave.dateReturn | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Checkup Date</span></dt>
+        <dd>
+          <span>{{ leave.checkupDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Convalescing Period</span></dt>
+        <dd>
+          <span>{{ leave.convalescingPeriod }}</span>
+        </dd>
+        <dt><span>Diagnosis</span></dt>
+        <dd>
+          <span>{{ leave.diagnosis }}</span>
+        </dd>
+        <dt><span>Physician</span></dt>
+        <dd>
+          <span>{{ leave.physician }}</span>
+        </dd>
+        <dt><span>Employee</span></dt>
+        <dd>
+          <div *ngIf="leave.employee">
+            <a [routerLink]="['/employee', leave.employee?.id, 'view']">{{ leave.employee?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Leave Type</span></dt>
+        <dd>
+          <div *ngIf="leave.leaveType">
+            <a [routerLink]="['/leave-type', leave.leaveType?.id, 'view']">{{ leave.leaveType?.name }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/leave', leave.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

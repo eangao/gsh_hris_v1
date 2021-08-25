@@ -1,0 +1,195 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-leave-heading" data-cy="LeaveCreateUpdateHeading">Create or edit a Leave</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_dateApply">Date Apply</label>
+          <div class="input-group">
+            <input
+              id="field_dateApply"
+              data-cy="dateApply"
+              type="text"
+              class="form-control"
+              name="dateApply"
+              ngbDatepicker
+              #dateApplyDp="ngbDatepicker"
+              formControlName="dateApply"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="dateApplyDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+          <div *ngIf="editForm.get('dateApply')!.invalid && (editForm.get('dateApply')!.dirty || editForm.get('dateApply')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('dateApply')?.errors?.required"> This field is required. </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_dateStart">Date Start</label>
+          <div class="input-group">
+            <input
+              id="field_dateStart"
+              data-cy="dateStart"
+              type="text"
+              class="form-control"
+              name="dateStart"
+              ngbDatepicker
+              #dateStartDp="ngbDatepicker"
+              formControlName="dateStart"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="dateStartDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+          <div *ngIf="editForm.get('dateStart')!.invalid && (editForm.get('dateStart')!.dirty || editForm.get('dateStart')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('dateStart')?.errors?.required"> This field is required. </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_dateEnd">Date End</label>
+          <div class="input-group">
+            <input
+              id="field_dateEnd"
+              data-cy="dateEnd"
+              type="text"
+              class="form-control"
+              name="dateEnd"
+              ngbDatepicker
+              #dateEndDp="ngbDatepicker"
+              formControlName="dateEnd"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="dateEndDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+            </span>
+          </div>
+          <div *ngIf="editForm.get('dateEnd')!.invalid && (editForm.get('dateEnd')!.dirty || editForm.get('dateEnd')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('dateEnd')?.errors?.required"> This field is required. </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_dateReturn">Date Return</label>
+          <div class="input-group">
+            <input
+              id="field_dateReturn"
+              data-cy="dateReturn"
+              type="text"
+              class="form-control"
+              name="dateReturn"
+              ngbDatepicker
+              #dateReturnDp="ngbDatepicker"
+              formControlName="dateReturn"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="dateReturnDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+          <div *ngIf="editForm.get('dateReturn')!.invalid && (editForm.get('dateReturn')!.dirty || editForm.get('dateReturn')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('dateReturn')?.errors?.required"> This field is required. </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_checkupDate">Checkup Date</label>
+          <div class="input-group">
+            <input
+              id="field_checkupDate"
+              data-cy="checkupDate"
+              type="text"
+              class="form-control"
+              name="checkupDate"
+              ngbDatepicker
+              #checkupDateDp="ngbDatepicker"
+              formControlName="checkupDate"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="checkupDateDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_convalescingPeriod">Convalescing Period</label>
+          <input
+            type="number"
+            class="form-control"
+            name="convalescingPeriod"
+            id="field_convalescingPeriod"
+            data-cy="convalescingPeriod"
+            formControlName="convalescingPeriod"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_diagnosis">Diagnosis</label>
+          <textarea class="form-control" name="diagnosis" id="field_diagnosis" data-cy="diagnosis" formControlName="diagnosis"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_physician">Physician</label>
+          <input type="text" class="form-control" name="physician" id="field_physician" data-cy="physician" formControlName="physician" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_employee">Employee</label>
+          <select class="form-control" id="field_employee" data-cy="employee" name="employee" formControlName="employee">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="employeeOption.id === editForm.get('employee')!.value?.id ? editForm.get('employee')!.value : employeeOption"
+              *ngFor="let employeeOption of employeesSharedCollection; trackBy: trackEmployeeById"
+            >
+              {{ employeeOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_leaveType">Leave Type</label>
+          <select class="form-control" id="field_leaveType" data-cy="leaveType" name="leaveType" formControlName="leaveType">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="leaveTypeOption.id === editForm.get('leaveType')!.value?.id ? editForm.get('leaveType')!.value : leaveTypeOption"
+              *ngFor="let leaveTypeOption of leaveTypesSharedCollection; trackBy: trackLeaveTypeById"
+            >
+              {{ leaveTypeOption.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
