@@ -44,7 +44,7 @@ export class EmployeeUpdateComponent implements OnInit {
     sickLeaveYearlyCreditUsed: [],
     leaveYearlyCredit: [],
     leaveYearlyCreditUsed: [],
-    user: [null, Validators.required],
+    user: [],
     department: [null, Validators.required],
     employmentType: [null, Validators.required],
   });
