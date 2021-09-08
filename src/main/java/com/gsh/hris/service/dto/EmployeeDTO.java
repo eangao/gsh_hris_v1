@@ -14,21 +14,29 @@ public class EmployeeDTO implements Serializable {
 
     private Integer employeeId;
 
-    @Size(max = 100)
+    @Size(min = 6, max = 30)
+    private String username;
+
+    @Size(max = 50)
     private String firstName;
 
-    @Size(max = 100)
+    @Size(max = 50)
     private String middleName;
 
-    @Size(max = 100)
+    @Size(max = 50)
     private String lastName;
 
-    @Size(max = 20)
+    @Size(max = 15)
     private String nameSuffix;
 
     private LocalDate birthdate;
 
+    private Boolean sex;
+
     private String mobileNumber;
+
+    @Size(max = 50)
+    private String email;
 
     private Boolean isNotLocked;
 
@@ -64,6 +72,14 @@ public class EmployeeDTO implements Serializable {
 
     public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getFirstName() {
@@ -106,12 +122,28 @@ public class EmployeeDTO implements Serializable {
         this.birthdate = birthdate;
     }
 
+    public Boolean getSex() {
+        return sex;
+    }
+
+    public void setSex(Boolean sex) {
+        this.sex = sex;
+    }
+
     public String getMobileNumber() {
         return mobileNumber;
     }
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Boolean getIsNotLocked() {
@@ -221,12 +253,15 @@ public class EmployeeDTO implements Serializable {
         return "EmployeeDTO{" +
             "id=" + getId() +
             ", employeeId=" + getEmployeeId() +
+            ", username='" + getUsername() + "'" +
             ", firstName='" + getFirstName() + "'" +
             ", middleName='" + getMiddleName() + "'" +
             ", lastName='" + getLastName() + "'" +
             ", nameSuffix='" + getNameSuffix() + "'" +
             ", birthdate='" + getBirthdate() + "'" +
+            ", sex='" + getSex() + "'" +
             ", mobileNumber='" + getMobileNumber() + "'" +
+            ", email='" + getEmail() + "'" +
             ", isNotLocked='" + getIsNotLocked() + "'" +
             ", dateHired='" + getDateHired() + "'" +
             ", dateDeno='" + getDateDeno() + "'" +

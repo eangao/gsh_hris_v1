@@ -27,12 +27,15 @@ describe('Service Tests', () => {
       elemDefault = {
         id: 0,
         employeeId: 0,
+        username: 'AAAAAAA',
         firstName: 'AAAAAAA',
         middleName: 'AAAAAAA',
         lastName: 'AAAAAAA',
         nameSuffix: 'AAAAAAA',
         birthdate: currentDate,
+        sex: false,
         mobileNumber: 'AAAAAAA',
+        email: 'AAAAAAA',
         isNotLocked: false,
         dateHired: currentDate,
         dateDeno: currentDate,
@@ -93,12 +96,15 @@ describe('Service Tests', () => {
           {
             id: 1,
             employeeId: 1,
+            username: 'BBBBBB',
             firstName: 'BBBBBB',
             middleName: 'BBBBBB',
             lastName: 'BBBBBB',
             nameSuffix: 'BBBBBB',
             birthdate: currentDate.format(DATE_FORMAT),
+            sex: true,
             mobileNumber: 'BBBBBB',
+            email: 'BBBBBB',
             isNotLocked: true,
             dateHired: currentDate.format(DATE_FORMAT),
             dateDeno: currentDate.format(DATE_FORMAT),
@@ -129,18 +135,20 @@ describe('Service Tests', () => {
       it('should partial update a Employee', () => {
         const patchObject = Object.assign(
           {
+            username: 'BBBBBB',
             firstName: 'BBBBBB',
             middleName: 'BBBBBB',
             lastName: 'BBBBBB',
             nameSuffix: 'BBBBBB',
             birthdate: currentDate.format(DATE_FORMAT),
+            sex: true,
             mobileNumber: 'BBBBBB',
+            email: 'BBBBBB',
             isNotLocked: true,
             dateHired: currentDate.format(DATE_FORMAT),
             dateDeno: currentDate.format(DATE_FORMAT),
             sickLeaveYearlyCredit: 1,
             sickLeaveYearlyCreditUsed: 1,
-            leaveYearlyCredit: 1,
             leaveYearlyCreditUsed: 1,
           },
           new Employee()
@@ -169,12 +177,15 @@ describe('Service Tests', () => {
           {
             id: 1,
             employeeId: 1,
+            username: 'BBBBBB',
             firstName: 'BBBBBB',
             middleName: 'BBBBBB',
             lastName: 'BBBBBB',
             nameSuffix: 'BBBBBB',
             birthdate: currentDate.format(DATE_FORMAT),
+            sex: true,
             mobileNumber: 'BBBBBB',
+            email: 'BBBBBB',
             isNotLocked: true,
             dateHired: currentDate.format(DATE_FORMAT),
             dateDeno: currentDate.format(DATE_FORMAT),
@@ -240,7 +251,7 @@ describe('Service Tests', () => {
         });
 
         it('should add only unique Employee to an array', () => {
-          const employeeArray: IEmployee[] = [{ id: 123 }, { id: 456 }, { id: 67904 }];
+          const employeeArray: IEmployee[] = [{ id: 123 }, { id: 456 }, { id: 78969 }];
           const employeeCollection: IEmployee[] = [{ id: 123 }];
           expectedResult = service.addEmployeeToCollectionIfMissing(employeeCollection, ...employeeArray);
           expect(expectedResult).toHaveLength(3);

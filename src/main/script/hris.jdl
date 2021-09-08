@@ -1,12 +1,25 @@
 // ENTITIES:
-entity Employee {	
+
+    //to set the default user role
+    //Set<String> role = new HashSet<String>();
+    //role.add("ROLE_USER");
+
+//Email, username and name is duplicate in user and employee
+//add employee email and name should be save in both entity  user and employee
+//update employee email, username and name update also in  user entity
+//user cannot update thier information except password
+//admin(HR_Role) only can edit employee information
+entity Employee {
 	employeeId Integer
-    firstName String maxlength(100)
-    middleName String  maxlength(100)
-    lastName String  maxlength(100)
-    nameSuffix String maxlength(20)
+    username String minlength(6) maxlength(30)
+    firstName String  maxlength(50)
+    middleName String  maxlength(50)
+    lastName String  maxlength(50)
+    nameSuffix String maxlength(15)
     birthdate LocalDate
+    sex Boolean
     mobileNumber String
+    email String maxlength(50)
     isNotLocked Boolean
     dateHired LocalDate
     dateDeno LocalDate
@@ -25,7 +38,7 @@ entity Department {
 }
 
 entity EmploymentType {
-	name String maxlength(50)   
+	name String maxlength(50)
 }
 
 entity Position {
@@ -34,12 +47,12 @@ entity Position {
 
 entity DutySchedule {
 	dateTimeIn Instant
-    dateTimeOut Instant     
+    dateTimeOut Instant
 }
 
 entity DailyTimeRecord {
 	dateTimeIn Instant
-    dateTimeOut Instant     
+    dateTimeOut Instant
 }
 
 entity Benefits {
@@ -67,9 +80,9 @@ entity Leave {
 	dateApply LocalDate required
     dateStart LocalDate	required
     dateEnd LocalDate required
-    dateReturn LocalDate required	
-    checkupDate LocalDate	
-    convalescingPeriod Integer	
+    dateReturn LocalDate required
+    checkupDate LocalDate
+    convalescingPeriod Integer
     diagnosis TextBlob
     physician String
 }
@@ -85,7 +98,7 @@ entity Holiday {
 }
 
 entity HolidayType {
-	name String    
+	name String
 }
 
 // RELATIONSHIPS:
@@ -101,11 +114,11 @@ relationship OneToMany{
     Employee to DutySchedule{employee(id) }
     Employee to DailyTimeRecord{employee(id) }
     Employee to Benefits{employee(id) }
-    Employee to Dependents{employee(id) }  
+    Employee to Dependents{employee(id) }
     Employee to Education{employee(id) }
-    Employee to TrainingHistory{employee(id) }    
-    Employee to Leave{employee(id) } 
-    LeaveType to Leave{leaveType(name) }    
+    Employee to TrainingHistory{employee(id) }
+    Employee to Leave{employee(id) }
+    LeaveType to Leave{leaveType(name) }
 }
 
 

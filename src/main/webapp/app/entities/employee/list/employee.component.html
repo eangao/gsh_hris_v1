@@ -34,12 +34,15 @@
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
           <th scope="col" jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="employeeId"><span>Employee Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="username"><span>Username</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="firstName"><span>First Name</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="middleName"><span>Middle Name</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="lastName"><span>Last Name</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="nameSuffix"><span>Name Suffix</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="birthdate"><span>Birthdate</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sex"><span>Sex</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="mobileNumber"><span>Mobile Number</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="email"><span>Email</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="isNotLocked"><span>Is Not Locked</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="dateHired"><span>Date Hired</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="dateDeno"><span>Date Deno</span> <fa-icon icon="sort"></fa-icon></th>
@@ -61,12 +64,15 @@
             <a [routerLink]="['/employee', employee.id, 'view']">{{ employee.id }}</a>
           </td>
           <td>{{ employee.employeeId }}</td>
+          <td>{{ employee.username }}</td>
           <td>{{ employee.firstName }}</td>
           <td>{{ employee.middleName }}</td>
           <td>{{ employee.lastName }}</td>
           <td>{{ employee.nameSuffix }}</td>
           <td>{{ employee.birthdate | formatMediumDate }}</td>
+          <td>{{ employee.sex }}</td>
           <td>{{ employee.mobileNumber }}</td>
+          <td>{{ employee.email }}</td>
           <td>{{ employee.isNotLocked }}</td>
           <td>{{ employee.dateHired | formatMediumDate }}</td>
           <td>{{ employee.dateDeno | formatMediumDate }}</td>

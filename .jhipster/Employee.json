@@ -6,36 +6,53 @@
       "fieldType": "Integer"
     },
     {
+      "fieldName": "username",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMinlength": "6",
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
       "fieldName": "firstName",
       "fieldType": "String",
       "fieldValidateRules": ["maxlength"],
-      "fieldValidateRulesMaxlength": "100"
+      "fieldValidateRulesMaxlength": "50"
     },
     {
       "fieldName": "middleName",
       "fieldType": "String",
       "fieldValidateRules": ["maxlength"],
-      "fieldValidateRulesMaxlength": "100"
+      "fieldValidateRulesMaxlength": "50"
     },
     {
       "fieldName": "lastName",
       "fieldType": "String",
       "fieldValidateRules": ["maxlength"],
-      "fieldValidateRulesMaxlength": "100"
+      "fieldValidateRulesMaxlength": "50"
     },
     {
       "fieldName": "nameSuffix",
       "fieldType": "String",
       "fieldValidateRules": ["maxlength"],
-      "fieldValidateRulesMaxlength": "20"
+      "fieldValidateRulesMaxlength": "15"
     },
     {
       "fieldName": "birthdate",
       "fieldType": "LocalDate"
     },
     {
+      "fieldName": "sex",
+      "fieldType": "Boolean"
+    },
+    {
       "fieldName": "mobileNumber",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
     },
     {
       "fieldName": "isNotLocked",

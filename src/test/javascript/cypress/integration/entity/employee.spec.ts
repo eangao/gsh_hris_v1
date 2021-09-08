@@ -99,17 +99,24 @@ describe('Employee e2e test', () => {
 
     cy.get(`[data-cy="employeeId"]`).type('99355').should('have.value', '99355');
 
-    cy.get(`[data-cy="firstName"]`).type('Jasper').should('have.value', 'Jasper');
+    cy.get(`[data-cy="username"]`).type('Borders Lane').should('have.value', 'Borders Lane');
 
-    cy.get(`[data-cy="middleName"]`).type('Connecticut blockchains').should('have.value', 'Connecticut blockchains');
+    cy.get(`[data-cy="firstName"]`).type('Dedrick').should('have.value', 'Dedrick');
 
-    cy.get(`[data-cy="lastName"]`).type('Kemmer').should('have.value', 'Kemmer');
+    cy.get(`[data-cy="middleName"]`).type('markets Principal').should('have.value', 'markets Principal');
 
-    cy.get(`[data-cy="nameSuffix"]`).type('Generic open').should('have.value', 'Generic open');
+    cy.get(`[data-cy="lastName"]`).type('Gutkowski').should('have.value', 'Gutkowski');
 
-    cy.get(`[data-cy="birthdate"]`).type('2021-08-23').should('have.value', '2021-08-23');
+    cy.get(`[data-cy="nameSuffix"]`).type('User-friendly D').should('have.value', 'User-friendly D');
 
-    cy.get(`[data-cy="mobileNumber"]`).type('Developer').should('have.value', 'Developer');
+    cy.get(`[data-cy="birthdate"]`).type('2021-08-24').should('have.value', '2021-08-24');
+
+    cy.get(`[data-cy="sex"]`).should('not.be.checked');
+    cy.get(`[data-cy="sex"]`).click().should('be.checked');
+
+    cy.get(`[data-cy="mobileNumber"]`).type('Handmade').should('have.value', 'Handmade');
+
+    cy.get(`[data-cy="email"]`).type('Natalie_Huels@yahoo.com').should('have.value', 'Natalie_Huels@yahoo.com');
 
     cy.get(`[data-cy="isNotLocked"]`).should('not.be.checked');
     cy.get(`[data-cy="isNotLocked"]`).click().should('be.checked');
@@ -118,13 +125,13 @@ describe('Employee e2e test', () => {
 
     cy.get(`[data-cy="dateDeno"]`).type('2021-08-23').should('have.value', '2021-08-23');
 
-    cy.get(`[data-cy="sickLeaveYearlyCredit"]`).type('20948').should('have.value', '20948');
+    cy.get(`[data-cy="sickLeaveYearlyCredit"]`).type('55992').should('have.value', '55992');
 
-    cy.get(`[data-cy="sickLeaveYearlyCreditUsed"]`).type('47924').should('have.value', '47924');
+    cy.get(`[data-cy="sickLeaveYearlyCreditUsed"]`).type('33081').should('have.value', '33081');
 
-    cy.get(`[data-cy="leaveYearlyCredit"]`).type('22083').should('have.value', '22083');
+    cy.get(`[data-cy="leaveYearlyCredit"]`).type('29104').should('have.value', '29104');
 
-    cy.get(`[data-cy="leaveYearlyCreditUsed"]`).type('8584').should('have.value', '8584');
+    cy.get(`[data-cy="leaveYearlyCreditUsed"]`).type('94330').should('have.value', '94330');
 
     cy.setFieldSelectToLastOfEntity('user');
 

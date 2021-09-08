@@ -38,6 +38,9 @@ class EmployeeResourceIT {
     private static final Integer UPDATED_EMPLOYEE_ID = 2;
     private static final Integer SMALLER_EMPLOYEE_ID = 1 - 1;
 
+    private static final String DEFAULT_USERNAME = "AAAAAAAAAA";
+    private static final String UPDATED_USERNAME = "BBBBBBBBBB";
+
     private static final String DEFAULT_FIRST_NAME = "AAAAAAAAAA";
     private static final String UPDATED_FIRST_NAME = "BBBBBBBBBB";
 
@@ -54,8 +57,14 @@ class EmployeeResourceIT {
     private static final LocalDate UPDATED_BIRTHDATE = LocalDate.now(ZoneId.systemDefault());
     private static final LocalDate SMALLER_BIRTHDATE = LocalDate.ofEpochDay(-1L);
 
+    private static final Boolean DEFAULT_SEX = false;
+    private static final Boolean UPDATED_SEX = true;
+
     private static final String DEFAULT_MOBILE_NUMBER = "AAAAAAAAAA";
     private static final String UPDATED_MOBILE_NUMBER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL = "BBBBBBBBBB";
 
     private static final Boolean DEFAULT_IS_NOT_LOCKED = false;
     private static final Boolean UPDATED_IS_NOT_LOCKED = true;
@@ -113,12 +122,15 @@ class EmployeeResourceIT {
     public static Employee createEntity(EntityManager em) {
         Employee employee = new Employee()
             .employeeId(DEFAULT_EMPLOYEE_ID)
+            .username(DEFAULT_USERNAME)
             .firstName(DEFAULT_FIRST_NAME)
             .middleName(DEFAULT_MIDDLE_NAME)
             .lastName(DEFAULT_LAST_NAME)
             .nameSuffix(DEFAULT_NAME_SUFFIX)
             .birthdate(DEFAULT_BIRTHDATE)
+            .sex(DEFAULT_SEX)
             .mobileNumber(DEFAULT_MOBILE_NUMBER)
+            .email(DEFAULT_EMAIL)
             .isNotLocked(DEFAULT_IS_NOT_LOCKED)
             .dateHired(DEFAULT_DATE_HIRED)
             .dateDeno(DEFAULT_DATE_DENO)
@@ -163,12 +175,15 @@ class EmployeeResourceIT {
     public static Employee createUpdatedEntity(EntityManager em) {
         Employee employee = new Employee()
             .employeeId(UPDATED_EMPLOYEE_ID)
+            .username(UPDATED_USERNAME)
             .firstName(UPDATED_FIRST_NAME)
             .middleName(UPDATED_MIDDLE_NAME)
             .lastName(UPDATED_LAST_NAME)
             .nameSuffix(UPDATED_NAME_SUFFIX)
             .birthdate(UPDATED_BIRTHDATE)
+            .sex(UPDATED_SEX)
             .mobileNumber(UPDATED_MOBILE_NUMBER)
+            .email(UPDATED_EMAIL)
             .isNotLocked(UPDATED_IS_NOT_LOCKED)
             .dateHired(UPDATED_DATE_HIRED)
             .dateDeno(UPDATED_DATE_DENO)
@@ -224,12 +239,15 @@ class EmployeeResourceIT {
         assertThat(employeeList).hasSize(databaseSizeBeforeCreate + 1);
         Employee testEmployee = employeeList.get(employeeList.size() - 1);
         assertThat(testEmployee.getEmployeeId()).isEqualTo(DEFAULT_EMPLOYEE_ID);
+        assertThat(testEmployee.getUsername()).isEqualTo(DEFAULT_USERNAME);
         assertThat(testEmployee.getFirstName()).isEqualTo(DEFAULT_FIRST_NAME);
         assertThat(testEmployee.getMiddleName()).isEqualTo(DEFAULT_MIDDLE_NAME);
         assertThat(testEmployee.getLastName()).isEqualTo(DEFAULT_LAST_NAME);
         assertThat(testEmployee.getNameSuffix()).isEqualTo(DEFAULT_NAME_SUFFIX);
         assertThat(testEmployee.getBirthdate()).isEqualTo(DEFAULT_BIRTHDATE);
+        assertThat(testEmployee.getSex()).isEqualTo(DEFAULT_SEX);
         assertThat(testEmployee.getMobileNumber()).isEqualTo(DEFAULT_MOBILE_NUMBER);
+        assertThat(testEmployee.getEmail()).isEqualTo(DEFAULT_EMAIL);
         assertThat(testEmployee.getIsNotLocked()).isEqualTo(DEFAULT_IS_NOT_LOCKED);
         assertThat(testEmployee.getDateHired()).isEqualTo(DEFAULT_DATE_HIRED);
         assertThat(testEmployee.getDateDeno()).isEqualTo(DEFAULT_DATE_DENO);
@@ -271,12 +289,15 @@ class EmployeeResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(employee.getId().intValue())))
             .andExpect(jsonPath("$.[*].employeeId").value(hasItem(DEFAULT_EMPLOYEE_ID)))
+            .andExpect(jsonPath("$.[*].username").value(hasItem(DEFAULT_USERNAME)))
             .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRST_NAME)))
             .andExpect(jsonPath("$.[*].middleName").value(hasItem(DEFAULT_MIDDLE_NAME)))
             .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME)))
             .andExpect(jsonPath("$.[*].nameSuffix").value(hasItem(DEFAULT_NAME_SUFFIX)))
             .andExpect(jsonPath("$.[*].birthdate").value(hasItem(DEFAULT_BIRTHDATE.toString())))
+            .andExpect(jsonPath("$.[*].sex").value(hasItem(DEFAULT_SEX.booleanValue())))
             .andExpect(jsonPath("$.[*].mobileNumber").value(hasItem(DEFAULT_MOBILE_NUMBER)))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
             .andExpect(jsonPath("$.[*].isNotLocked").value(hasItem(DEFAULT_IS_NOT_LOCKED.booleanValue())))
             .andExpect(jsonPath("$.[*].dateHired").value(hasItem(DEFAULT_DATE_HIRED.toString())))
             .andExpect(jsonPath("$.[*].dateDeno").value(hasItem(DEFAULT_DATE_DENO.toString())))
@@ -299,12 +320,15 @@ class EmployeeResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(employee.getId().intValue()))
             .andExpect(jsonPath("$.employeeId").value(DEFAULT_EMPLOYEE_ID))
+            .andExpect(jsonPath("$.username").value(DEFAULT_USERNAME))
             .andExpect(jsonPath("$.firstName").value(DEFAULT_FIRST_NAME))
             .andExpect(jsonPath("$.middleName").value(DEFAULT_MIDDLE_NAME))
             .andExpect(jsonPath("$.lastName").value(DEFAULT_LAST_NAME))
             .andExpect(jsonPath("$.nameSuffix").value(DEFAULT_NAME_SUFFIX))
             .andExpect(jsonPath("$.birthdate").value(DEFAULT_BIRTHDATE.toString()))
+            .andExpect(jsonPath("$.sex").value(DEFAULT_SEX.booleanValue()))
             .andExpect(jsonPath("$.mobileNumber").value(DEFAULT_MOBILE_NUMBER))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
             .andExpect(jsonPath("$.isNotLocked").value(DEFAULT_IS_NOT_LOCKED.booleanValue()))
             .andExpect(jsonPath("$.dateHired").value(DEFAULT_DATE_HIRED.toString()))
             .andExpect(jsonPath("$.dateDeno").value(DEFAULT_DATE_DENO.toString()))
@@ -434,6 +458,84 @@ class EmployeeResourceIT {
 
         // Get all the employeeList where employeeId is greater than SMALLER_EMPLOYEE_ID
         defaultEmployeeShouldBeFound("employeeId.greaterThan=" + SMALLER_EMPLOYEE_ID);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByUsernameIsEqualToSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where username equals to DEFAULT_USERNAME
+        defaultEmployeeShouldBeFound("username.equals=" + DEFAULT_USERNAME);
+
+        // Get all the employeeList where username equals to UPDATED_USERNAME
+        defaultEmployeeShouldNotBeFound("username.equals=" + UPDATED_USERNAME);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByUsernameIsNotEqualToSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where username not equals to DEFAULT_USERNAME
+        defaultEmployeeShouldNotBeFound("username.notEquals=" + DEFAULT_USERNAME);
+
+        // Get all the employeeList where username not equals to UPDATED_USERNAME
+        defaultEmployeeShouldBeFound("username.notEquals=" + UPDATED_USERNAME);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByUsernameIsInShouldWork() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where username in DEFAULT_USERNAME or UPDATED_USERNAME
+        defaultEmployeeShouldBeFound("username.in=" + DEFAULT_USERNAME + "," + UPDATED_USERNAME);
+
+        // Get all the employeeList where username equals to UPDATED_USERNAME
+        defaultEmployeeShouldNotBeFound("username.in=" + UPDATED_USERNAME);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByUsernameIsNullOrNotNull() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where username is not null
+        defaultEmployeeShouldBeFound("username.specified=true");
+
+        // Get all the employeeList where username is null
+        defaultEmployeeShouldNotBeFound("username.specified=false");
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByUsernameContainsSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where username contains DEFAULT_USERNAME
+        defaultEmployeeShouldBeFound("username.contains=" + DEFAULT_USERNAME);
+
+        // Get all the employeeList where username contains UPDATED_USERNAME
+        defaultEmployeeShouldNotBeFound("username.contains=" + UPDATED_USERNAME);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByUsernameNotContainsSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where username does not contain DEFAULT_USERNAME
+        defaultEmployeeShouldNotBeFound("username.doesNotContain=" + DEFAULT_USERNAME);
+
+        // Get all the employeeList where username does not contain UPDATED_USERNAME
+        defaultEmployeeShouldBeFound("username.doesNotContain=" + UPDATED_USERNAME);
     }
 
     @Test
@@ -854,6 +956,58 @@ class EmployeeResourceIT {
 
     @Test
     @Transactional
+    void getAllEmployeesBySexIsEqualToSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where sex equals to DEFAULT_SEX
+        defaultEmployeeShouldBeFound("sex.equals=" + DEFAULT_SEX);
+
+        // Get all the employeeList where sex equals to UPDATED_SEX
+        defaultEmployeeShouldNotBeFound("sex.equals=" + UPDATED_SEX);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesBySexIsNotEqualToSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where sex not equals to DEFAULT_SEX
+        defaultEmployeeShouldNotBeFound("sex.notEquals=" + DEFAULT_SEX);
+
+        // Get all the employeeList where sex not equals to UPDATED_SEX
+        defaultEmployeeShouldBeFound("sex.notEquals=" + UPDATED_SEX);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesBySexIsInShouldWork() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where sex in DEFAULT_SEX or UPDATED_SEX
+        defaultEmployeeShouldBeFound("sex.in=" + DEFAULT_SEX + "," + UPDATED_SEX);
+
+        // Get all the employeeList where sex equals to UPDATED_SEX
+        defaultEmployeeShouldNotBeFound("sex.in=" + UPDATED_SEX);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesBySexIsNullOrNotNull() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where sex is not null
+        defaultEmployeeShouldBeFound("sex.specified=true");
+
+        // Get all the employeeList where sex is null
+        defaultEmployeeShouldNotBeFound("sex.specified=false");
+    }
+
+    @Test
+    @Transactional
     void getAllEmployeesByMobileNumberIsEqualToSomething() throws Exception {
         // Initialize the database
         employeeRepository.saveAndFlush(employee);
@@ -928,6 +1082,84 @@ class EmployeeResourceIT {
 
         // Get all the employeeList where mobileNumber does not contain UPDATED_MOBILE_NUMBER
         defaultEmployeeShouldBeFound("mobileNumber.doesNotContain=" + UPDATED_MOBILE_NUMBER);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByEmailIsEqualToSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where email equals to DEFAULT_EMAIL
+        defaultEmployeeShouldBeFound("email.equals=" + DEFAULT_EMAIL);
+
+        // Get all the employeeList where email equals to UPDATED_EMAIL
+        defaultEmployeeShouldNotBeFound("email.equals=" + UPDATED_EMAIL);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByEmailIsNotEqualToSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where email not equals to DEFAULT_EMAIL
+        defaultEmployeeShouldNotBeFound("email.notEquals=" + DEFAULT_EMAIL);
+
+        // Get all the employeeList where email not equals to UPDATED_EMAIL
+        defaultEmployeeShouldBeFound("email.notEquals=" + UPDATED_EMAIL);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByEmailIsInShouldWork() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where email in DEFAULT_EMAIL or UPDATED_EMAIL
+        defaultEmployeeShouldBeFound("email.in=" + DEFAULT_EMAIL + "," + UPDATED_EMAIL);
+
+        // Get all the employeeList where email equals to UPDATED_EMAIL
+        defaultEmployeeShouldNotBeFound("email.in=" + UPDATED_EMAIL);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByEmailIsNullOrNotNull() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where email is not null
+        defaultEmployeeShouldBeFound("email.specified=true");
+
+        // Get all the employeeList where email is null
+        defaultEmployeeShouldNotBeFound("email.specified=false");
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByEmailContainsSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where email contains DEFAULT_EMAIL
+        defaultEmployeeShouldBeFound("email.contains=" + DEFAULT_EMAIL);
+
+        // Get all the employeeList where email contains UPDATED_EMAIL
+        defaultEmployeeShouldNotBeFound("email.contains=" + UPDATED_EMAIL);
+    }
+
+    @Test
+    @Transactional
+    void getAllEmployeesByEmailNotContainsSomething() throws Exception {
+        // Initialize the database
+        employeeRepository.saveAndFlush(employee);
+
+        // Get all the employeeList where email does not contain DEFAULT_EMAIL
+        defaultEmployeeShouldNotBeFound("email.doesNotContain=" + DEFAULT_EMAIL);
+
+        // Get all the employeeList where email does not contain UPDATED_EMAIL
+        defaultEmployeeShouldBeFound("email.doesNotContain=" + UPDATED_EMAIL);
     }
 
     @Test
@@ -1827,12 +2059,15 @@ class EmployeeResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(employee.getId().intValue())))
             .andExpect(jsonPath("$.[*].employeeId").value(hasItem(DEFAULT_EMPLOYEE_ID)))
+            .andExpect(jsonPath("$.[*].username").value(hasItem(DEFAULT_USERNAME)))
             .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRST_NAME)))
             .andExpect(jsonPath("$.[*].middleName").value(hasItem(DEFAULT_MIDDLE_NAME)))
             .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME)))
             .andExpect(jsonPath("$.[*].nameSuffix").value(hasItem(DEFAULT_NAME_SUFFIX)))
             .andExpect(jsonPath("$.[*].birthdate").value(hasItem(DEFAULT_BIRTHDATE.toString())))
+            .andExpect(jsonPath("$.[*].sex").value(hasItem(DEFAULT_SEX.booleanValue())))
             .andExpect(jsonPath("$.[*].mobileNumber").value(hasItem(DEFAULT_MOBILE_NUMBER)))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
             .andExpect(jsonPath("$.[*].isNotLocked").value(hasItem(DEFAULT_IS_NOT_LOCKED.booleanValue())))
             .andExpect(jsonPath("$.[*].dateHired").value(hasItem(DEFAULT_DATE_HIRED.toString())))
             .andExpect(jsonPath("$.[*].dateDeno").value(hasItem(DEFAULT_DATE_DENO.toString())))
@@ -1889,12 +2124,15 @@ class EmployeeResourceIT {
         em.detach(updatedEmployee);
         updatedEmployee
             .employeeId(UPDATED_EMPLOYEE_ID)
+            .username(UPDATED_USERNAME)
             .firstName(UPDATED_FIRST_NAME)
             .middleName(UPDATED_MIDDLE_NAME)
             .lastName(UPDATED_LAST_NAME)
             .nameSuffix(UPDATED_NAME_SUFFIX)
             .birthdate(UPDATED_BIRTHDATE)
+            .sex(UPDATED_SEX)
             .mobileNumber(UPDATED_MOBILE_NUMBER)
+            .email(UPDATED_EMAIL)
             .isNotLocked(UPDATED_IS_NOT_LOCKED)
             .dateHired(UPDATED_DATE_HIRED)
             .dateDeno(UPDATED_DATE_DENO)
@@ -1917,12 +2155,15 @@ class EmployeeResourceIT {
         assertThat(employeeList).hasSize(databaseSizeBeforeUpdate);
         Employee testEmployee = employeeList.get(employeeList.size() - 1);
         assertThat(testEmployee.getEmployeeId()).isEqualTo(UPDATED_EMPLOYEE_ID);
+        assertThat(testEmployee.getUsername()).isEqualTo(UPDATED_USERNAME);
         assertThat(testEmployee.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
         assertThat(testEmployee.getMiddleName()).isEqualTo(UPDATED_MIDDLE_NAME);
         assertThat(testEmployee.getLastName()).isEqualTo(UPDATED_LAST_NAME);
         assertThat(testEmployee.getNameSuffix()).isEqualTo(UPDATED_NAME_SUFFIX);
         assertThat(testEmployee.getBirthdate()).isEqualTo(UPDATED_BIRTHDATE);
+        assertThat(testEmployee.getSex()).isEqualTo(UPDATED_SEX);
         assertThat(testEmployee.getMobileNumber()).isEqualTo(UPDATED_MOBILE_NUMBER);
+        assertThat(testEmployee.getEmail()).isEqualTo(UPDATED_EMAIL);
         assertThat(testEmployee.getIsNotLocked()).isEqualTo(UPDATED_IS_NOT_LOCKED);
         assertThat(testEmployee.getDateHired()).isEqualTo(UPDATED_DATE_HIRED);
         assertThat(testEmployee.getDateDeno()).isEqualTo(UPDATED_DATE_DENO);
@@ -2010,13 +2251,13 @@ class EmployeeResourceIT {
         partialUpdatedEmployee.setId(employee.getId());
 
         partialUpdatedEmployee
+            .username(UPDATED_USERNAME)
             .firstName(UPDATED_FIRST_NAME)
-            .middleName(UPDATED_MIDDLE_NAME)
+            .birthdate(UPDATED_BIRTHDATE)
+            .sex(UPDATED_SEX)
             .mobileNumber(UPDATED_MOBILE_NUMBER)
-            .isNotLocked(UPDATED_IS_NOT_LOCKED)
-            .dateHired(UPDATED_DATE_HIRED)
-            .dateDeno(UPDATED_DATE_DENO)
-            .leaveYearlyCreditUsed(UPDATED_LEAVE_YEARLY_CREDIT_USED);
+            .email(UPDATED_EMAIL)
+            .sickLeaveYearlyCredit(UPDATED_SICK_LEAVE_YEARLY_CREDIT);
 
         restEmployeeMockMvc
             .perform(
@@ -2031,19 +2272,22 @@ class EmployeeResourceIT {
         assertThat(employeeList).hasSize(databaseSizeBeforeUpdate);
         Employee testEmployee = employeeList.get(employeeList.size() - 1);
         assertThat(testEmployee.getEmployeeId()).isEqualTo(DEFAULT_EMPLOYEE_ID);
+        assertThat(testEmployee.getUsername()).isEqualTo(UPDATED_USERNAME);
         assertThat(testEmployee.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
-        assertThat(testEmployee.getMiddleName()).isEqualTo(UPDATED_MIDDLE_NAME);
+        assertThat(testEmployee.getMiddleName()).isEqualTo(DEFAULT_MIDDLE_NAME);
         assertThat(testEmployee.getLastName()).isEqualTo(DEFAULT_LAST_NAME);
         assertThat(testEmployee.getNameSuffix()).isEqualTo(DEFAULT_NAME_SUFFIX);
-        assertThat(testEmployee.getBirthdate()).isEqualTo(DEFAULT_BIRTHDATE);
+        assertThat(testEmployee.getBirthdate()).isEqualTo(UPDATED_BIRTHDATE);
+        assertThat(testEmployee.getSex()).isEqualTo(UPDATED_SEX);
         assertThat(testEmployee.getMobileNumber()).isEqualTo(UPDATED_MOBILE_NUMBER);
-        assertThat(testEmployee.getIsNotLocked()).isEqualTo(UPDATED_IS_NOT_LOCKED);
-        assertThat(testEmployee.getDateHired()).isEqualTo(UPDATED_DATE_HIRED);
-        assertThat(testEmployee.getDateDeno()).isEqualTo(UPDATED_DATE_DENO);
-        assertThat(testEmployee.getSickLeaveYearlyCredit()).isEqualTo(DEFAULT_SICK_LEAVE_YEARLY_CREDIT);
+        assertThat(testEmployee.getEmail()).isEqualTo(UPDATED_EMAIL);
+        assertThat(testEmployee.getIsNotLocked()).isEqualTo(DEFAULT_IS_NOT_LOCKED);
+        assertThat(testEmployee.getDateHired()).isEqualTo(DEFAULT_DATE_HIRED);
+        assertThat(testEmployee.getDateDeno()).isEqualTo(DEFAULT_DATE_DENO);
+        assertThat(testEmployee.getSickLeaveYearlyCredit()).isEqualTo(UPDATED_SICK_LEAVE_YEARLY_CREDIT);
         assertThat(testEmployee.getSickLeaveYearlyCreditUsed()).isEqualTo(DEFAULT_SICK_LEAVE_YEARLY_CREDIT_USED);
         assertThat(testEmployee.getLeaveYearlyCredit()).isEqualTo(DEFAULT_LEAVE_YEARLY_CREDIT);
-        assertThat(testEmployee.getLeaveYearlyCreditUsed()).isEqualTo(UPDATED_LEAVE_YEARLY_CREDIT_USED);
+        assertThat(testEmployee.getLeaveYearlyCreditUsed()).isEqualTo(DEFAULT_LEAVE_YEARLY_CREDIT_USED);
     }
 
     @Test
@@ -2060,12 +2304,15 @@ class EmployeeResourceIT {
 
         partialUpdatedEmployee
             .employeeId(UPDATED_EMPLOYEE_ID)
+            .username(UPDATED_USERNAME)
             .firstName(UPDATED_FIRST_NAME)
             .middleName(UPDATED_MIDDLE_NAME)
             .lastName(UPDATED_LAST_NAME)
             .nameSuffix(UPDATED_NAME_SUFFIX)
             .birthdate(UPDATED_BIRTHDATE)
+            .sex(UPDATED_SEX)
             .mobileNumber(UPDATED_MOBILE_NUMBER)
+            .email(UPDATED_EMAIL)
             .isNotLocked(UPDATED_IS_NOT_LOCKED)
             .dateHired(UPDATED_DATE_HIRED)
             .dateDeno(UPDATED_DATE_DENO)
@@ -2087,12 +2334,15 @@ class EmployeeResourceIT {
         assertThat(employeeList).hasSize(databaseSizeBeforeUpdate);
         Employee testEmployee = employeeList.get(employeeList.size() - 1);
         assertThat(testEmployee.getEmployeeId()).isEqualTo(UPDATED_EMPLOYEE_ID);
+        assertThat(testEmployee.getUsername()).isEqualTo(UPDATED_USERNAME);
         assertThat(testEmployee.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
         assertThat(testEmployee.getMiddleName()).isEqualTo(UPDATED_MIDDLE_NAME);
         assertThat(testEmployee.getLastName()).isEqualTo(UPDATED_LAST_NAME);
         assertThat(testEmployee.getNameSuffix()).isEqualTo(UPDATED_NAME_SUFFIX);
         assertThat(testEmployee.getBirthdate()).isEqualTo(UPDATED_BIRTHDATE);
+        assertThat(testEmployee.getSex()).isEqualTo(UPDATED_SEX);
         assertThat(testEmployee.getMobileNumber()).isEqualTo(UPDATED_MOBILE_NUMBER);
+        assertThat(testEmployee.getEmail()).isEqualTo(UPDATED_EMAIL);
         assertThat(testEmployee.getIsNotLocked()).isEqualTo(UPDATED_IS_NOT_LOCKED);
         assertThat(testEmployee.getDateHired()).isEqualTo(UPDATED_DATE_HIRED);
         assertThat(testEmployee.getDateDeno()).isEqualTo(UPDATED_DATE_DENO);

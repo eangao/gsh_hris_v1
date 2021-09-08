@@ -14,12 +14,15 @@ import {IEmploymentType} from 'app/entities/employment-type/employment-type.mode
 export interface IEmployee {
   id?: number;
   employeeId?: number | null;
+  username?: string | null;
   firstName?: string | null;
   middleName?: string | null;
   lastName?: string | null;
   nameSuffix?: string | null;
   birthdate?: dayjs.Dayjs | null;
+  sex?: boolean | null;
   mobileNumber?: string | null;
+  email?: string | null;
   isNotLocked?: boolean | null;
   dateHired?: dayjs.Dayjs | null;
   dateDeno?: dayjs.Dayjs | null;
@@ -44,12 +47,15 @@ export class Employee implements IEmployee {
   constructor(
     public id?: number,
     public employeeId?: number | null,
+    public username?: string | null,
     public firstName?: string | null,
     public middleName?: string | null,
     public lastName?: string | null,
     public nameSuffix?: string | null,
     public birthdate?: dayjs.Dayjs | null,
+    public sex?: boolean | null,
     public mobileNumber?: string | null,
+    public email?: string | null,
     public isNotLocked?: boolean | null,
     public dateHired?: dayjs.Dayjs | null,
     public dateDeno?: dayjs.Dayjs | null,
@@ -69,6 +75,7 @@ export class Employee implements IEmployee {
     public department?: IDepartment,
     public employmentType?: IEmploymentType
   ) {
+    this.sex = this.sex ?? false;
     this.isNotLocked = this.isNotLocked ?? false;
   }
 }

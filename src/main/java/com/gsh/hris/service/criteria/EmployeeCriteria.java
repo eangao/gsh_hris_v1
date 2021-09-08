@@ -23,6 +23,8 @@ public class EmployeeCriteria implements Serializable, Criteria {
 
     private IntegerFilter employeeId;
 
+    private StringFilter username;
+
     private StringFilter firstName;
 
     private StringFilter middleName;
@@ -33,7 +35,11 @@ public class EmployeeCriteria implements Serializable, Criteria {
 
     private LocalDateFilter birthdate;
 
+    private BooleanFilter sex;
+
     private StringFilter mobileNumber;
+
+    private StringFilter email;
 
     private BooleanFilter isNotLocked;
 
@@ -76,12 +82,15 @@ public class EmployeeCriteria implements Serializable, Criteria {
     public EmployeeCriteria(EmployeeCriteria other) {
         this.id = other.id == null ? null : other.id.copy();
         this.employeeId = other.employeeId == null ? null : other.employeeId.copy();
+        this.username = other.username == null ? null : other.username.copy();
         this.firstName = other.firstName == null ? null : other.firstName.copy();
         this.middleName = other.middleName == null ? null : other.middleName.copy();
         this.lastName = other.lastName == null ? null : other.lastName.copy();
         this.nameSuffix = other.nameSuffix == null ? null : other.nameSuffix.copy();
         this.birthdate = other.birthdate == null ? null : other.birthdate.copy();
+        this.sex = other.sex == null ? null : other.sex.copy();
         this.mobileNumber = other.mobileNumber == null ? null : other.mobileNumber.copy();
+        this.email = other.email == null ? null : other.email.copy();
         this.isNotLocked = other.isNotLocked == null ? null : other.isNotLocked.copy();
         this.dateHired = other.dateHired == null ? null : other.dateHired.copy();
         this.dateDeno = other.dateDeno == null ? null : other.dateDeno.copy();
@@ -135,6 +144,21 @@ public class EmployeeCriteria implements Serializable, Criteria {
 
     public void setEmployeeId(IntegerFilter employeeId) {
         this.employeeId = employeeId;
+    }
+
+    public StringFilter getUsername() {
+        return username;
+    }
+
+    public StringFilter username() {
+        if (username == null) {
+            username = new StringFilter();
+        }
+        return username;
+    }
+
+    public void setUsername(StringFilter username) {
+        this.username = username;
     }
 
     public StringFilter getFirstName() {
@@ -212,6 +236,21 @@ public class EmployeeCriteria implements Serializable, Criteria {
         this.birthdate = birthdate;
     }
 
+    public BooleanFilter getSex() {
+        return sex;
+    }
+
+    public BooleanFilter sex() {
+        if (sex == null) {
+            sex = new BooleanFilter();
+        }
+        return sex;
+    }
+
+    public void setSex(BooleanFilter sex) {
+        this.sex = sex;
+    }
+
     public StringFilter getMobileNumber() {
         return mobileNumber;
     }
@@ -225,6 +264,21 @@ public class EmployeeCriteria implements Serializable, Criteria {
 
     public void setMobileNumber(StringFilter mobileNumber) {
         this.mobileNumber = mobileNumber;
+    }
+
+    public StringFilter getEmail() {
+        return email;
+    }
+
+    public StringFilter email() {
+        if (email == null) {
+            email = new StringFilter();
+        }
+        return email;
+    }
+
+    public void setEmail(StringFilter email) {
+        this.email = email;
     }
 
     public BooleanFilter getIsNotLocked() {
@@ -509,12 +563,15 @@ public class EmployeeCriteria implements Serializable, Criteria {
         return (
             Objects.equals(id, that.id) &&
             Objects.equals(employeeId, that.employeeId) &&
+            Objects.equals(username, that.username) &&
             Objects.equals(firstName, that.firstName) &&
             Objects.equals(middleName, that.middleName) &&
             Objects.equals(lastName, that.lastName) &&
             Objects.equals(nameSuffix, that.nameSuffix) &&
             Objects.equals(birthdate, that.birthdate) &&
+            Objects.equals(sex, that.sex) &&
             Objects.equals(mobileNumber, that.mobileNumber) &&
+            Objects.equals(email, that.email) &&
             Objects.equals(isNotLocked, that.isNotLocked) &&
             Objects.equals(dateHired, that.dateHired) &&
             Objects.equals(dateDeno, that.dateDeno) &&
@@ -541,12 +598,15 @@ public class EmployeeCriteria implements Serializable, Criteria {
         return Objects.hash(
             id,
             employeeId,
+            username,
             firstName,
             middleName,
             lastName,
             nameSuffix,
             birthdate,
+            sex,
             mobileNumber,
+            email,
             isNotLocked,
             dateHired,
             dateDeno,
@@ -574,12 +634,15 @@ public class EmployeeCriteria implements Serializable, Criteria {
         return "EmployeeCriteria{" +
             (id != null ? "id=" + id + ", " : "") +
             (employeeId != null ? "employeeId=" + employeeId + ", " : "") +
+            (username != null ? "username=" + username + ", " : "") +
             (firstName != null ? "firstName=" + firstName + ", " : "") +
             (middleName != null ? "middleName=" + middleName + ", " : "") +
             (lastName != null ? "lastName=" + lastName + ", " : "") +
             (nameSuffix != null ? "nameSuffix=" + nameSuffix + ", " : "") +
             (birthdate != null ? "birthdate=" + birthdate + ", " : "") +
+            (sex != null ? "sex=" + sex + ", " : "") +
             (mobileNumber != null ? "mobileNumber=" + mobileNumber + ", " : "") +
+            (email != null ? "email=" + email + ", " : "") +
             (isNotLocked != null ? "isNotLocked=" + isNotLocked + ", " : "") +
             (dateHired != null ? "dateHired=" + dateHired + ", " : "") +
             (dateDeno != null ? "dateDeno=" + dateDeno + ", " : "") +

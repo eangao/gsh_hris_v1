@@ -72,12 +72,15 @@ class EmployeeGatlingTest extends Simulation {
             .headers(headers_http_authenticated)
             .body(StringBody("""{
                 "employeeId":"0"
+                , "username":"SAMPLE_TEXT"
                 , "firstName":"SAMPLE_TEXT"
                 , "middleName":"SAMPLE_TEXT"
                 , "lastName":"SAMPLE_TEXT"
                 , "nameSuffix":"SAMPLE_TEXT"
                 , "birthdate":"2020-01-01T00:00:00.000Z"
+                , "sex":null
                 , "mobileNumber":"SAMPLE_TEXT"
+                , "email":"SAMPLE_TEXT"
                 , "isNotLocked":null
                 , "dateHired":"2020-01-01T00:00:00.000Z"
                 , "dateDeno":"2020-01-01T00:00:00.000Z"

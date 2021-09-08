@@ -1,3 +1,3 @@
-id;employee_id;first_name;middle_name;last_name;name_suffix;birthdate;mobile_number;is_not_locked;date_hired;date_deno;sick_leave_yearly_credit;sick_leave_yearly_credit_used;leave_yearly_credit;leave_yearly_credit_used;user_id;department_id;employment_type_id
-1;62962;Nayeli;Account Soft;Jacobson;modular Concrete Dal;2021-08-24;frame Tuna;true;2021-08-24;2021-08-23;21024;97958;83938;8020;1;1;1
-2;783;Dora;bandwidth-monitored Underpass;Rath;Account Garden;2021-08-23;reinvent orchestrate;true;2021-08-23;2021-08-23;54645;31974;92208;32513;2;2;2
+id;employee_id;username;first_name;middle_name;last_name;name_suffix;birthdate;sex;mobile_number;email;is_not_locked;date_hired;date_deno;sick_leave_yearly_credit;sick_leave_yearly_credit_used;leave_yearly_credit;leave_yearly_credit_used;user_id;department_id;employment_type_id
+1;62962;payment back-end Account;Earl;innovative system;O'Conner;Bedfordshire;2021-08-24;false;interfaces override;Arlo58@hotmail.com;false;2021-08-24;2021-08-24;48050;90233;71649;71090;1;1;1
+2;65309;Switchable dot-com;Jaron;indigo Car;Legros;Germany interne;2021-08-23;true;Berkshire;Eunice20@gmail.com;false;2021-08-23;2021-08-23;18581;73893;65341;53478;2;2;2

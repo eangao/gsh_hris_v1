@@ -89,6 +89,9 @@ public class EmployeeQueryService extends QueryService<Employee> {
             if (criteria.getEmployeeId() != null) {
                 specification = specification.and(buildRangeSpecification(criteria.getEmployeeId(), Employee_.employeeId));
             }
+            if (criteria.getUsername() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getUsername(), Employee_.username));
+            }
             if (criteria.getFirstName() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getFirstName(), Employee_.firstName));
             }
@@ -104,8 +107,14 @@ public class EmployeeQueryService extends QueryService<Employee> {
             if (criteria.getBirthdate() != null) {
                 specification = specification.and(buildRangeSpecification(criteria.getBirthdate(), Employee_.birthdate));
             }
+            if (criteria.getSex() != null) {
+                specification = specification.and(buildSpecification(criteria.getSex(), Employee_.sex));
+            }
             if (criteria.getMobileNumber() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getMobileNumber(), Employee_.mobileNumber));
+            }
+            if (criteria.getEmail() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getEmail(), Employee_.email));
             }
             if (criteria.getIsNotLocked() != null) {
                 specification = specification.and(buildSpecification(criteria.getIsNotLocked(), Employee_.isNotLocked));

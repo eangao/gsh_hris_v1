@@ -29,27 +29,38 @@ public class Employee implements Serializable {
     @Column(name = "employee_id")
     private Integer employeeId;
 
-    @Size(max = 100)
-    @Column(name = "first_name", length = 100)
+    @Size(min = 6, max = 30)
+    @Column(name = "username", length = 30)
+    private String username;
+
+    @Size(max = 50)
+    @Column(name = "first_name", length = 50)
     private String firstName;
 
-    @Size(max = 100)
-    @Column(name = "middle_name", length = 100)
+    @Size(max = 50)
+    @Column(name = "middle_name", length = 50)
     private String middleName;
 
-    @Size(max = 100)
-    @Column(name = "last_name", length = 100)
+    @Size(max = 50)
+    @Column(name = "last_name", length = 50)
     private String lastName;
 
-    @Size(max = 20)
-    @Column(name = "name_suffix", length = 20)
+    @Size(max = 15)
+    @Column(name = "name_suffix", length = 15)
     private String nameSuffix;
 
     @Column(name = "birthdate")
     private LocalDate birthdate;
 
+    @Column(name = "sex")
+    private Boolean sex;
+
     @Column(name = "mobile_number")
     private String mobileNumber;
+
+    @Size(max = 50)
+    @Column(name = "email", length = 50)
+    private String email;
 
     @Column(name = "is_not_locked")
     private Boolean isNotLocked;
@@ -154,6 +165,19 @@ public class Employee implements Serializable {
         this.employeeId = employeeId;
     }
 
+    public String getUsername() {
+        return this.username;
+    }
+
+    public Employee username(String username) {
+        this.username = username;
+        return this;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getFirstName() {
         return this.firstName;
     }
@@ -219,6 +243,19 @@ public class Employee implements Serializable {
         this.birthdate = birthdate;
     }
 
+    public Boolean getSex() {
+        return this.sex;
+    }
+
+    public Employee sex(Boolean sex) {
+        this.sex = sex;
+        return this;
+    }
+
+    public void setSex(Boolean sex) {
+        this.sex = sex;
+    }
+
     public String getMobileNumber() {
         return this.mobileNumber;
     }
@@ -230,6 +267,19 @@ public class Employee implements Serializable {
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public Employee email(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Boolean getIsNotLocked() {
@@ -635,12 +685,15 @@ public class Employee implements Serializable {
         return "Employee{" +
             "id=" + getId() +
             ", employeeId=" + getEmployeeId() +
+            ", username='" + getUsername() + "'" +
             ", firstName='" + getFirstName() + "'" +
             ", middleName='" + getMiddleName() + "'" +
             ", lastName='" + getLastName() + "'" +
             ", nameSuffix='" + getNameSuffix() + "'" +
             ", birthdate='" + getBirthdate() + "'" +
+            ", sex='" + getSex() + "'" +
             ", mobileNumber='" + getMobileNumber() + "'" +
+            ", email='" + getEmail() + "'" +
             ", isNotLocked='" + getIsNotLocked() + "'" +
             ", dateHired='" + getDateHired() + "'" +
             ", dateDeno='" + getDateDeno() + "'" +
