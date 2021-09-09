@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IDependents} from '../dependents.model';
+import { IDependents } from '../dependents.model';
 
 @Component({
   selector: 'jhi-dependents-detail',

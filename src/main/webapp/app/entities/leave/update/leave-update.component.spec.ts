@@ -1,20 +1,20 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {of, Subject} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of, Subject } from 'rxjs';
 
-import {LeaveService} from '../service/leave.service';
-import {ILeave, Leave} from '../leave.model';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {EmployeeService} from 'app/entities/employee/service/employee.service';
-import {ILeaveType} from 'app/entities/leave-type/leave-type.model';
-import {LeaveTypeService} from 'app/entities/leave-type/service/leave-type.service';
+import { LeaveService } from '../service/leave.service';
+import { ILeave, Leave } from '../leave.model';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { EmployeeService } from 'app/entities/employee/service/employee.service';
+import { ILeaveType } from 'app/entities/leave-type/leave-type.model';
+import { LeaveTypeService } from 'app/entities/leave-type/service/leave-type.service';
 
-import {LeaveUpdateComponent} from './leave-update.component';
+import { LeaveUpdateComponent } from './leave-update.component';
 
 describe('Component Tests', () => {
   describe('Leave Management Update Component', () => {

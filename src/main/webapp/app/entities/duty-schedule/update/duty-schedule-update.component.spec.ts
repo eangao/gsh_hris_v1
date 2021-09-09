@@ -1,18 +1,18 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {of, Subject} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of, Subject } from 'rxjs';
 
-import {DutyScheduleService} from '../service/duty-schedule.service';
-import {DutySchedule, IDutySchedule} from '../duty-schedule.model';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {EmployeeService} from 'app/entities/employee/service/employee.service';
+import { DutyScheduleService } from '../service/duty-schedule.service';
+import { IDutySchedule, DutySchedule } from '../duty-schedule.model';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { EmployeeService } from 'app/entities/employee/service/employee.service';
 
-import {DutyScheduleUpdateComponent} from './duty-schedule-update.component';
+import { DutyScheduleUpdateComponent } from './duty-schedule-update.component';
 
 describe('Component Tests', () => {
   describe('DutySchedule Management Update Component', () => {

@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {finalize} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
-import {ILeaveType, LeaveType} from '../leave-type.model';
-import {LeaveTypeService} from '../service/leave-type.service';
+import { ILeaveType, LeaveType } from '../leave-type.model';
+import { LeaveTypeService } from '../service/leave-type.service';
 
 @Component({
   selector: 'jhi-leave-type-update',

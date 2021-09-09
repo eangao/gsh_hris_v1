@@ -1,5 +1,5 @@
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {ICluster} from 'app/entities/cluster/cluster.model';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { ICluster } from 'app/entities/cluster/cluster.model';
 
 export interface IDepartment {
   id?: number;

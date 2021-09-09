@@ -1,5 +1,10 @@
 // ENTITIES:
 
+//When using the H2 Disk database,
+//all of your data is stored in the target (mvn) or build (gradle) folders.
+//You can remove all data and tables by running ./mvnw clean or ./gradlew clean.
+//The new database tables will be created the next time you start your app.
+
     //to set the default user role
     //Set<String> role = new HashSet<String>();
     //role.add("ROLE_USER");
@@ -10,8 +15,8 @@
 //user cannot update thier information except password
 //admin(HR_Role) only can edit employee information
 entity Employee {
-	employeeId Integer
-    username String minlength(6) maxlength(30)
+	employeeId Integer unique required
+    username String minlength(6) maxlength(30) unique required
     firstName String  maxlength(50)
     middleName String  maxlength(50)
     lastName String  maxlength(50)
@@ -19,7 +24,7 @@ entity Employee {
     birthdate LocalDate
     sex Boolean
     mobileNumber String
-    email String maxlength(50)
+    email String maxlength(50) unique
     isNotLocked Boolean
     dateHired LocalDate
     dateDeno LocalDate

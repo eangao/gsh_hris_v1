@@ -1,11 +1,8 @@
 package com.gsh.hris.service.mapper;
 
-import com.gsh.hris.domain.Employee;
+import com.gsh.hris.domain.*;
 import com.gsh.hris.service.dto.EmployeeDTO;
-import org.mapstruct.BeanMapping;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Named;
+import org.mapstruct.*;
 
 /**
  * Mapper for the entity {@link Employee} and its DTO {@link EmployeeDTO}.

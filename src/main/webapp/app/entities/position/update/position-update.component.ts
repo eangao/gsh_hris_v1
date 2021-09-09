@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {FormBuilder, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {finalize, map} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize, map } from 'rxjs/operators';
 
-import {IPosition, Position} from '../position.model';
-import {PositionService} from '../service/position.service';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {EmployeeService} from 'app/entities/employee/service/employee.service';
+import { IPosition, Position } from '../position.model';
+import { PositionService } from '../service/position.service';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { EmployeeService } from 'app/entities/employee/service/employee.service';
 
 @Component({
   selector: 'jhi-position-update',

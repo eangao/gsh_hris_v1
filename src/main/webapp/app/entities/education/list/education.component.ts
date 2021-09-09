@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {ActivatedRoute, Router} from '@angular/router';
-import {combineLatest} from 'rxjs';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IEducation} from '../education.model';
+import { IEducation } from '../education.model';
 
-import {ASC, DESC, ITEMS_PER_PAGE, SORT} from 'app/config/pagination.constants';
-import {EducationService} from '../service/education.service';
-import {EducationDeleteDialogComponent} from '../delete/education-delete-dialog.component';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/config/pagination.constants';
+import { EducationService } from '../service/education.service';
+import { EducationDeleteDialogComponent } from '../delete/education-delete-dialog.component';
 
 @Component({
   selector: 'jhi-education',

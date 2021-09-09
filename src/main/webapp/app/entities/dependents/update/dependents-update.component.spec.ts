@@ -1,18 +1,18 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {of, Subject} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of, Subject } from 'rxjs';
 
-import {DependentsService} from '../service/dependents.service';
-import {Dependents, IDependents} from '../dependents.model';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {EmployeeService} from 'app/entities/employee/service/employee.service';
+import { DependentsService } from '../service/dependents.service';
+import { IDependents, Dependents } from '../dependents.model';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { EmployeeService } from 'app/entities/employee/service/employee.service';
 
-import {DependentsUpdateComponent} from './dependents-update.component';
+import { DependentsUpdateComponent } from './dependents-update.component';
 
 describe('Component Tests', () => {
   describe('Dependents Management Update Component', () => {

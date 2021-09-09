@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {finalize, map} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize, map } from 'rxjs/operators';
 
-import {ITrainingHistory, TrainingHistory} from '../training-history.model';
-import {TrainingHistoryService} from '../service/training-history.service';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {EmployeeService} from 'app/entities/employee/service/employee.service';
+import { ITrainingHistory, TrainingHistory } from '../training-history.model';
+import { TrainingHistoryService } from '../service/training-history.service';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { EmployeeService } from 'app/entities/employee/service/employee.service';
 
 @Component({
   selector: 'jhi-training-history-update',

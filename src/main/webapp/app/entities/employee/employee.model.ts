@@ -1,20 +1,20 @@
 import * as dayjs from 'dayjs';
-import {IUser} from 'app/entities/user/user.model';
-import {IPosition} from 'app/entities/position/position.model';
-import {IDutySchedule} from 'app/entities/duty-schedule/duty-schedule.model';
-import {IDailyTimeRecord} from 'app/entities/daily-time-record/daily-time-record.model';
-import {IBenefits} from 'app/entities/benefits/benefits.model';
-import {IDependents} from 'app/entities/dependents/dependents.model';
-import {IEducation} from 'app/entities/education/education.model';
-import {ITrainingHistory} from 'app/entities/training-history/training-history.model';
-import {ILeave} from 'app/entities/leave/leave.model';
-import {IDepartment} from 'app/entities/department/department.model';
-import {IEmploymentType} from 'app/entities/employment-type/employment-type.model';
+import { IUser } from 'app/entities/user/user.model';
+import { IPosition } from 'app/entities/position/position.model';
+import { IDutySchedule } from 'app/entities/duty-schedule/duty-schedule.model';
+import { IDailyTimeRecord } from 'app/entities/daily-time-record/daily-time-record.model';
+import { IBenefits } from 'app/entities/benefits/benefits.model';
+import { IDependents } from 'app/entities/dependents/dependents.model';
+import { IEducation } from 'app/entities/education/education.model';
+import { ITrainingHistory } from 'app/entities/training-history/training-history.model';
+import { ILeave } from 'app/entities/leave/leave.model';
+import { IDepartment } from 'app/entities/department/department.model';
+import { IEmploymentType } from 'app/entities/employment-type/employment-type.model';
 
 export interface IEmployee {
   id?: number;
-  employeeId?: number | null;
-  username?: string | null;
+  employeeId?: number;
+  username?: string;
   firstName?: string | null;
   middleName?: string | null;
   lastName?: string | null;
@@ -46,8 +46,8 @@ export interface IEmployee {
 export class Employee implements IEmployee {
   constructor(
     public id?: number,
-    public employeeId?: number | null,
-    public username?: string | null,
+    public employeeId?: number,
+    public username?: string,
     public firstName?: string | null,
     public middleName?: string | null,
     public lastName?: string | null,

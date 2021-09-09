@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {ActivatedRoute} from '@angular/router';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
-import {DailyTimeRecordDetailComponent} from './daily-time-record-detail.component';
+import { DailyTimeRecordDetailComponent } from './daily-time-record-detail.component';
 
 describe('Component Tests', () => {
   describe('DailyTimeRecord Management Detail Component', () => {

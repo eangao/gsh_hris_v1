@@ -1,13 +1,13 @@
 package com.gsh.hris.service;
 
-import com.gsh.hris.domain.Employee_;
+import com.gsh.hris.domain.*; // for static metamodels
 import com.gsh.hris.domain.Leave;
-import com.gsh.hris.domain.LeaveType_;
-import com.gsh.hris.domain.Leave_;
 import com.gsh.hris.repository.LeaveRepository;
 import com.gsh.hris.service.criteria.LeaveCriteria;
 import com.gsh.hris.service.dto.LeaveDTO;
 import com.gsh.hris.service.mapper.LeaveMapper;
+import java.util.List;
+import javax.persistence.criteria.JoinType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -16,9 +16,6 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
-
-import javax.persistence.criteria.JoinType;
-import java.util.List;
 
 /**
  * Service for executing complex queries for {@link Leave} entities in the database.

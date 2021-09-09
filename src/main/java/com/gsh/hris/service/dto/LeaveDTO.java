@@ -1,10 +1,10 @@
 package com.gsh.hris.service.dto;
 
-import javax.persistence.Lob;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
+import javax.persistence.Lob;
+import javax.validation.constraints.*;
 
 /**
  * A DTO for the {@link com.gsh.hris.domain.Leave} entity.

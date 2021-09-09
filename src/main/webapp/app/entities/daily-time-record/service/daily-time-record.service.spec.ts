@@ -1,11 +1,11 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import * as dayjs from 'dayjs';
 
-import {DATE_TIME_FORMAT} from 'app/config/input.constants';
-import {DailyTimeRecord, IDailyTimeRecord} from '../daily-time-record.model';
+import { DATE_TIME_FORMAT } from 'app/config/input.constants';
+import { IDailyTimeRecord, DailyTimeRecord } from '../daily-time-record.model';
 
-import {DailyTimeRecordService} from './daily-time-record.service';
+import { DailyTimeRecordService } from './daily-time-record.service';
 
 describe('Service Tests', () => {
   describe('DailyTimeRecord Service', () => {

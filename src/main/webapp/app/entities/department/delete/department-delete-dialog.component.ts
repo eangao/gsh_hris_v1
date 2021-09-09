@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IDepartment} from '../department.model';
-import {DepartmentService} from '../service/department.service';
+import { IDepartment } from '../department.model';
+import { DepartmentService } from '../service/department.service';
 
 @Component({
   templateUrl: './department-delete-dialog.component.html',

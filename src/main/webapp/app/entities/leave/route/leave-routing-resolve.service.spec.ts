@@ -1,15 +1,15 @@
 jest.mock('@angular/router');
 
-import {TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRouteSnapshot, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {ILeave, Leave} from '../leave.model';
-import {LeaveService} from '../service/leave.service';
+import { ILeave, Leave } from '../leave.model';
+import { LeaveService } from '../service/leave.service';
 
-import {LeaveRoutingResolveService} from './leave-routing-resolve.service';
+import { LeaveRoutingResolveService } from './leave-routing-resolve.service';
 
 describe('Service Tests', () => {
   describe('Leave routing resolve service', () => {

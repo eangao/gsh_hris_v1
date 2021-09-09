@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {ActivatedRoute, Router} from '@angular/router';
-import {combineLatest} from 'rxjs';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IHoliday} from '../holiday.model';
+import { IHoliday } from '../holiday.model';
 
-import {ASC, DESC, ITEMS_PER_PAGE, SORT} from 'app/config/pagination.constants';
-import {HolidayService} from '../service/holiday.service';
-import {HolidayDeleteDialogComponent} from '../delete/holiday-delete-dialog.component';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/config/pagination.constants';
+import { HolidayService } from '../service/holiday.service';
+import { HolidayDeleteDialogComponent } from '../delete/holiday-delete-dialog.component';
 
 @Component({
   selector: 'jhi-holiday',

@@ -1,15 +1,15 @@
 jest.mock('@angular/router');
 
-import {TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRouteSnapshot, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {DailyTimeRecord, IDailyTimeRecord} from '../daily-time-record.model';
-import {DailyTimeRecordService} from '../service/daily-time-record.service';
+import { IDailyTimeRecord, DailyTimeRecord } from '../daily-time-record.model';
+import { DailyTimeRecordService } from '../service/daily-time-record.service';
 
-import {DailyTimeRecordRoutingResolveService} from './daily-time-record-routing-resolve.service';
+import { DailyTimeRecordRoutingResolveService } from './daily-time-record-routing-resolve.service';
 
 describe('Service Tests', () => {
   describe('DailyTimeRecord routing resolve service', () => {

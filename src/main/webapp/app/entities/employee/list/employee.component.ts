@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {ActivatedRoute, Router} from '@angular/router';
-import {combineLatest} from 'rxjs';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IEmployee} from '../employee.model';
+import { IEmployee } from '../employee.model';
 
-import {ASC, DESC, ITEMS_PER_PAGE, SORT} from 'app/config/pagination.constants';
-import {EmployeeService} from '../service/employee.service';
-import {EmployeeDeleteDialogComponent} from '../delete/employee-delete-dialog.component';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/config/pagination.constants';
+import { EmployeeService } from '../service/employee.service';
+import { EmployeeDeleteDialogComponent } from '../delete/employee-delete-dialog.component';
 
 @Component({
   selector: 'jhi-employee',

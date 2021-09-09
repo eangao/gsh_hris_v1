@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {UserRouteAccessService} from 'app/core/auth/user-route-access.service';
-import {DailyTimeRecordComponent} from '../list/daily-time-record.component';
-import {DailyTimeRecordDetailComponent} from '../detail/daily-time-record-detail.component';
-import {DailyTimeRecordUpdateComponent} from '../update/daily-time-record-update.component';
-import {DailyTimeRecordRoutingResolveService} from './daily-time-record-routing-resolve.service';
+import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { DailyTimeRecordComponent } from '../list/daily-time-record.component';
+import { DailyTimeRecordDetailComponent } from '../detail/daily-time-record-detail.component';
+import { DailyTimeRecordUpdateComponent } from '../update/daily-time-record-update.component';
+import { DailyTimeRecordRoutingResolveService } from './daily-time-record-routing-resolve.service';
 
 const dailyTimeRecordRoute: Routes = [
   {

@@ -1,16 +1,16 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {of, Subject} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of, Subject } from 'rxjs';
 
-import {HolidayTypeService} from '../service/holiday-type.service';
-import {HolidayType, IHolidayType} from '../holiday-type.model';
+import { HolidayTypeService } from '../service/holiday-type.service';
+import { IHolidayType, HolidayType } from '../holiday-type.model';
 
-import {HolidayTypeUpdateComponent} from './holiday-type-update.component';
+import { HolidayTypeUpdateComponent } from './holiday-type-update.component';
 
 describe('Component Tests', () => {
   describe('HolidayType Management Update Component', () => {

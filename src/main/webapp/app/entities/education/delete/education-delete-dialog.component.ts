@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IEducation} from '../education.model';
-import {EducationService} from '../service/education.service';
+import { IEducation } from '../education.model';
+import { EducationService } from '../service/education.service';
 
 @Component({
   templateUrl: './education-delete-dialog.component.html',

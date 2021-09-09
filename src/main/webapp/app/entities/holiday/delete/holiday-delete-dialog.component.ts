@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IHoliday} from '../holiday.model';
-import {HolidayService} from '../service/holiday.service';
+import { IHoliday } from '../holiday.model';
+import { HolidayService } from '../service/holiday.service';
 
 @Component({
   templateUrl: './holiday-delete-dialog.component.html',

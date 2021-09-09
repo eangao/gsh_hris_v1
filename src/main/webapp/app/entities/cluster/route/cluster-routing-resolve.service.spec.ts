@@ -1,15 +1,15 @@
 jest.mock('@angular/router');
 
-import {TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRouteSnapshot, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {Cluster, ICluster} from '../cluster.model';
-import {ClusterService} from '../service/cluster.service';
+import { ICluster, Cluster } from '../cluster.model';
+import { ClusterService } from '../service/cluster.service';
 
-import {ClusterRoutingResolveService} from './cluster-routing-resolve.service';
+import { ClusterRoutingResolveService } from './cluster-routing-resolve.service';
 
 describe('Service Tests', () => {
   describe('Cluster routing resolve service', () => {

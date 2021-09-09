@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {UserRouteAccessService} from 'app/core/auth/user-route-access.service';
-import {ClusterComponent} from '../list/cluster.component';
-import {ClusterDetailComponent} from '../detail/cluster-detail.component';
-import {ClusterUpdateComponent} from '../update/cluster-update.component';
-import {ClusterRoutingResolveService} from './cluster-routing-resolve.service';
+import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { ClusterComponent } from '../list/cluster.component';
+import { ClusterDetailComponent } from '../detail/cluster-detail.component';
+import { ClusterUpdateComponent } from '../update/cluster-update.component';
+import { ClusterRoutingResolveService } from './cluster-routing-resolve.service';
 
 const clusterRoute: Routes = [
   {

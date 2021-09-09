@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IEmploymentType} from '../employment-type.model';
-import {EmploymentTypeService} from '../service/employment-type.service';
+import { IEmploymentType } from '../employment-type.model';
+import { EmploymentTypeService } from '../service/employment-type.service';
 
 @Component({
   templateUrl: './employment-type-delete-dialog.component.html',

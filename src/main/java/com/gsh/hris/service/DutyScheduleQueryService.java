@@ -1,12 +1,13 @@
 package com.gsh.hris.service;
 
+import com.gsh.hris.domain.*; // for static metamodels
 import com.gsh.hris.domain.DutySchedule;
-import com.gsh.hris.domain.DutySchedule_;
-import com.gsh.hris.domain.Employee_;
 import com.gsh.hris.repository.DutyScheduleRepository;
 import com.gsh.hris.service.criteria.DutyScheduleCriteria;
 import com.gsh.hris.service.dto.DutyScheduleDTO;
 import com.gsh.hris.service.mapper.DutyScheduleMapper;
+import java.util.List;
+import javax.persistence.criteria.JoinType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -15,9 +16,6 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
-
-import javax.persistence.criteria.JoinType;
-import java.util.List;
 
 /**
  * Service for executing complex queries for {@link DutySchedule} entities in the database.

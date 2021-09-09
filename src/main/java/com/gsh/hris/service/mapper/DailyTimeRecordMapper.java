@@ -1,9 +1,8 @@
 package com.gsh.hris.service.mapper;
 
-import com.gsh.hris.domain.DailyTimeRecord;
+import com.gsh.hris.domain.*;
 import com.gsh.hris.service.dto.DailyTimeRecordDTO;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.*;
 
 /**
  * Mapper for the entity {@link DailyTimeRecord} and its DTO {@link DailyTimeRecordDTO}.

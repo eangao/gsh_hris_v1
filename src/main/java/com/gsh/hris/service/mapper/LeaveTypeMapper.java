@@ -1,11 +1,8 @@
 package com.gsh.hris.service.mapper;
 
-import com.gsh.hris.domain.LeaveType;
+import com.gsh.hris.domain.*;
 import com.gsh.hris.service.dto.LeaveTypeDTO;
-import org.mapstruct.BeanMapping;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Named;
+import org.mapstruct.*;
 
 /**
  * Mapper for the entity {@link LeaveType} and its DTO {@link LeaveTypeDTO}.

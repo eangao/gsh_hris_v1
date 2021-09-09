@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {FormBuilder, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {finalize, map} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize, map } from 'rxjs/operators';
 
-import {Benefits, IBenefits} from '../benefits.model';
-import {BenefitsService} from '../service/benefits.service';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {EmployeeService} from 'app/entities/employee/service/employee.service';
+import { IBenefits, Benefits } from '../benefits.model';
+import { BenefitsService } from '../service/benefits.service';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { EmployeeService } from 'app/entities/employee/service/employee.service';
 
 @Component({
   selector: 'jhi-benefits-update',

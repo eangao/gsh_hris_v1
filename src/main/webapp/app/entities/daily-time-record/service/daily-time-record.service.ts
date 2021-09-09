@@ -1,13 +1,13 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import * as dayjs from 'dayjs';
 
-import {isPresent} from 'app/core/util/operators';
-import {ApplicationConfigService} from 'app/core/config/application-config.service';
-import {createRequestOption} from 'app/core/request/request-util';
-import {getDailyTimeRecordIdentifier, IDailyTimeRecord} from '../daily-time-record.model';
+import { isPresent } from 'app/core/util/operators';
+import { ApplicationConfigService } from 'app/core/config/application-config.service';
+import { createRequestOption } from 'app/core/request/request-util';
+import { IDailyTimeRecord, getDailyTimeRecordIdentifier } from '../daily-time-record.model';
 
 export type EntityResponseType = HttpResponse<IDailyTimeRecord>;
 export type EntityArrayResponseType = HttpResponse<IDailyTimeRecord[]>;

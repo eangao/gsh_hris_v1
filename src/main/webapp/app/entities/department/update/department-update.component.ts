@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {FormBuilder, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {finalize, map} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize, map } from 'rxjs/operators';
 
-import {Department, IDepartment} from '../department.model';
-import {DepartmentService} from '../service/department.service';
-import {ICluster} from 'app/entities/cluster/cluster.model';
-import {ClusterService} from 'app/entities/cluster/service/cluster.service';
+import { IDepartment, Department } from '../department.model';
+import { DepartmentService } from '../service/department.service';
+import { ICluster } from 'app/entities/cluster/cluster.model';
+import { ClusterService } from 'app/entities/cluster/service/cluster.service';
 
 @Component({
   selector: 'jhi-department-update',

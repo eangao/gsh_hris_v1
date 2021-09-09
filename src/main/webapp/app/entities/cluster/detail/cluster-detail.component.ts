@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {ICluster} from '../cluster.model';
+import { ICluster } from '../cluster.model';
 
 @Component({
   selector: 'jhi-cluster-detail',

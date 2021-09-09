@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {finalize} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
-import {HolidayType, IHolidayType} from '../holiday-type.model';
-import {HolidayTypeService} from '../service/holiday-type.service';
+import { IHolidayType, HolidayType } from '../holiday-type.model';
+import { HolidayTypeService } from '../service/holiday-type.service';
 
 @Component({
   selector: 'jhi-holiday-type-update',

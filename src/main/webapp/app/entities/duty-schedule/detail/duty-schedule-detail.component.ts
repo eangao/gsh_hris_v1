@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IDutySchedule} from '../duty-schedule.model';
+import { IDutySchedule } from '../duty-schedule.model';
 
 @Component({
   selector: 'jhi-duty-schedule-detail',

@@ -1,4 +1,4 @@
-import {IEmployee} from 'app/entities/employee/employee.model';
+import { IEmployee } from 'app/entities/employee/employee.model';
 
 export interface IPosition {
   id?: number;

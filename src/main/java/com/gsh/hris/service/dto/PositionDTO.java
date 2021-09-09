@@ -2,6 +2,7 @@ package com.gsh.hris.service.dto;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.validation.constraints.*;
 
 /**
  * A DTO for the {@link com.gsh.hris.domain.Position} entity.

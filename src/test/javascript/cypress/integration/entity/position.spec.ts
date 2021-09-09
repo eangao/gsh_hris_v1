@@ -1,14 +1,14 @@
-import {entityItemSelector} from '../../support/commands';
+import { entityItemSelector } from '../../support/commands';
 import {
-  entityConfirmDeleteButtonSelector,
-  entityCreateButtonSelector,
-  entityCreateCancelButtonSelector,
-  entityCreateSaveButtonSelector,
-  entityDeleteButtonSelector,
-  entityDetailsBackButtonSelector,
-  entityDetailsButtonSelector,
-  entityEditButtonSelector,
   entityTableSelector,
+  entityDetailsButtonSelector,
+  entityDetailsBackButtonSelector,
+  entityCreateButtonSelector,
+  entityCreateSaveButtonSelector,
+  entityCreateCancelButtonSelector,
+  entityEditButtonSelector,
+  entityDeleteButtonSelector,
+  entityConfirmDeleteButtonSelector,
 } from '../../support/entity';
 
 describe('Position e2e test', () => {

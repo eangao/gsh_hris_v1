@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IPosition} from '../position.model';
-import {PositionService} from '../service/position.service';
+import { IPosition } from '../position.model';
+import { PositionService } from '../service/position.service';
 
 @Component({
   templateUrl: './position-delete-dialog.component.html',

@@ -1,14 +1,14 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRoute, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {DailyTimeRecordService} from '../service/daily-time-record.service';
+import { DailyTimeRecordService } from '../service/daily-time-record.service';
 
-import {DailyTimeRecordComponent} from './daily-time-record.component';
+import { DailyTimeRecordComponent } from './daily-time-record.component';
 
 describe('Component Tests', () => {
   describe('DailyTimeRecord Management Component', () => {

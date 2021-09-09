@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IBenefits} from '../benefits.model';
-import {BenefitsService} from '../service/benefits.service';
+import { IBenefits } from '../benefits.model';
+import { BenefitsService } from '../service/benefits.service';
 
 @Component({
   templateUrl: './benefits-delete-dialog.component.html',

@@ -1,10 +1,33 @@
 package com.gsh.hris.web.rest;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.hasItem;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
 import com.gsh.hris.IntegrationTest;
-import com.gsh.hris.domain.*;
+import com.gsh.hris.domain.Benefits;
+import com.gsh.hris.domain.DailyTimeRecord;
+import com.gsh.hris.domain.Department;
+import com.gsh.hris.domain.Dependents;
+import com.gsh.hris.domain.DutySchedule;
+import com.gsh.hris.domain.Education;
+import com.gsh.hris.domain.Employee;
+import com.gsh.hris.domain.EmploymentType;
+import com.gsh.hris.domain.Leave;
+import com.gsh.hris.domain.Position;
+import com.gsh.hris.domain.TrainingHistory;
+import com.gsh.hris.domain.User;
 import com.gsh.hris.repository.EmployeeRepository;
+import com.gsh.hris.service.criteria.EmployeeCriteria;
 import com.gsh.hris.service.dto.EmployeeDTO;
 import com.gsh.hris.service.mapper.EmployeeMapper;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicLong;
+import javax.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,18 +36,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.hasItem;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * Integration tests for the {@link EmployeeResource} REST controller.
@@ -274,6 +285,42 @@ class EmployeeResourceIT {
         // Validate the Employee in the database
         List<Employee> employeeList = employeeRepository.findAll();
         assertThat(employeeList).hasSize(databaseSizeBeforeCreate);
+    }
+
+    @Test
+    @Transactional
+    void checkEmployeeIdIsRequired() throws Exception {
+        int databaseSizeBeforeTest = employeeRepository.findAll().size();
+        // set the field null
+        employee.setEmployeeId(null);
+
+        // Create the Employee, which fails.
+        EmployeeDTO employeeDTO = employeeMapper.toDto(employee);
+
+        restEmployeeMockMvc
+            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(employeeDTO)))
+            .andExpect(status().isBadRequest());
+
+        List<Employee> employeeList = employeeRepository.findAll();
+        assertThat(employeeList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    void checkUsernameIsRequired() throws Exception {
+        int databaseSizeBeforeTest = employeeRepository.findAll().size();
+        // set the field null
+        employee.setUsername(null);
+
+        // Create the Employee, which fails.
+        EmployeeDTO employeeDTO = employeeMapper.toDto(employee);
+
+        restEmployeeMockMvc
+            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(employeeDTO)))
+            .andExpect(status().isBadRequest());
+
+        List<Employee> employeeList = employeeRepository.findAll();
+        assertThat(employeeList).hasSize(databaseSizeBeforeTest);
     }
 
     @Test

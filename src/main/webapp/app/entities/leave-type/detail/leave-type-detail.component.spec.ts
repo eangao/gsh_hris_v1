@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {ActivatedRoute} from '@angular/router';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
-import {LeaveTypeDetailComponent} from './leave-type-detail.component';
+import { LeaveTypeDetailComponent } from './leave-type-detail.component';
 
 describe('Component Tests', () => {
   describe('LeaveType Management Detail Component', () => {

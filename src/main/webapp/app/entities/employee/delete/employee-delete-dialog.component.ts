@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IEmployee} from '../employee.model';
-import {EmployeeService} from '../service/employee.service';
+import { IEmployee } from '../employee.model';
+import { EmployeeService } from '../service/employee.service';
 
 @Component({
   templateUrl: './employee-delete-dialog.component.html',

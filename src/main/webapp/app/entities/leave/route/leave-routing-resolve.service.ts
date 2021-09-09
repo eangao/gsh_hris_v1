@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
-import {EMPTY, Observable, of} from 'rxjs';
-import {mergeMap} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Observable, of, EMPTY } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
-import {ILeave, Leave} from '../leave.model';
-import {LeaveService} from '../service/leave.service';
+import { ILeave, Leave } from '../leave.model';
+import { LeaveService } from '../service/leave.service';
 
 @Injectable({ providedIn: 'root' })
 export class LeaveRoutingResolveService implements Resolve<ILeave> {

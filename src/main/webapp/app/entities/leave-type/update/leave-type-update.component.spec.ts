@@ -1,16 +1,16 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {of, Subject} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of, Subject } from 'rxjs';
 
-import {LeaveTypeService} from '../service/leave-type.service';
-import {ILeaveType, LeaveType} from '../leave-type.model';
+import { LeaveTypeService } from '../service/leave-type.service';
+import { ILeaveType, LeaveType } from '../leave-type.model';
 
-import {LeaveTypeUpdateComponent} from './leave-type-update.component';
+import { LeaveTypeUpdateComponent } from './leave-type-update.component';
 
 describe('Component Tests', () => {
   describe('LeaveType Management Update Component', () => {

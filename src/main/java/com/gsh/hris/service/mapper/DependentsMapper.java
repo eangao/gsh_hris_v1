@@ -1,9 +1,8 @@
 package com.gsh.hris.service.mapper;
 
-import com.gsh.hris.domain.Dependents;
+import com.gsh.hris.domain.*;
 import com.gsh.hris.service.dto.DependentsDTO;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.*;
 
 /**
  * Mapper for the entity {@link Dependents} and its DTO {@link DependentsDTO}.

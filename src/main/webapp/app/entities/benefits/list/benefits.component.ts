@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {ActivatedRoute, Router} from '@angular/router';
-import {combineLatest} from 'rxjs';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IBenefits} from '../benefits.model';
+import { IBenefits } from '../benefits.model';
 
-import {ASC, DESC, ITEMS_PER_PAGE, SORT} from 'app/config/pagination.constants';
-import {BenefitsService} from '../service/benefits.service';
-import {BenefitsDeleteDialogComponent} from '../delete/benefits-delete-dialog.component';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/config/pagination.constants';
+import { BenefitsService } from '../service/benefits.service';
+import { BenefitsDeleteDialogComponent } from '../delete/benefits-delete-dialog.component';
 
 @Component({
   selector: 'jhi-benefits',

@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {ActivatedRoute, Router} from '@angular/router';
-import {combineLatest} from 'rxjs';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IDutySchedule} from '../duty-schedule.model';
+import { IDutySchedule } from '../duty-schedule.model';
 
-import {ASC, DESC, ITEMS_PER_PAGE, SORT} from 'app/config/pagination.constants';
-import {DutyScheduleService} from '../service/duty-schedule.service';
-import {DutyScheduleDeleteDialogComponent} from '../delete/duty-schedule-delete-dialog.component';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/config/pagination.constants';
+import { DutyScheduleService } from '../service/duty-schedule.service';
+import { DutyScheduleDeleteDialogComponent } from '../delete/duty-schedule-delete-dialog.component';
 
 @Component({
   selector: 'jhi-duty-schedule',

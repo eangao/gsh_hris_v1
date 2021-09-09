@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {ITrainingHistory} from '../training-history.model';
+import { ITrainingHistory } from '../training-history.model';
 
 @Component({
   selector: 'jhi-training-history-detail',

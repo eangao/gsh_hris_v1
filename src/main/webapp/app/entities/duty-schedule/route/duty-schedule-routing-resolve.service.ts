@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
-import {EMPTY, Observable, of} from 'rxjs';
-import {mergeMap} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Observable, of, EMPTY } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
-import {DutySchedule, IDutySchedule} from '../duty-schedule.model';
-import {DutyScheduleService} from '../service/duty-schedule.service';
+import { IDutySchedule, DutySchedule } from '../duty-schedule.model';
+import { DutyScheduleService } from '../service/duty-schedule.service';
 
 @Injectable({ providedIn: 'root' })
 export class DutyScheduleRoutingResolveService implements Resolve<IDutySchedule> {

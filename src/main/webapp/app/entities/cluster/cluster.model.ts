@@ -1,4 +1,4 @@
-import {IDepartment} from 'app/entities/department/department.model';
+import { IDepartment } from 'app/entities/department/department.model';
 
 export interface ICluster {
   id?: number;

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IBenefits} from '../benefits.model';
+import { IBenefits } from '../benefits.model';
 
 @Component({
   selector: 'jhi-benefits-detail',

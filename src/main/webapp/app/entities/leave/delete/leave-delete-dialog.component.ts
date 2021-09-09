@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {ILeave} from '../leave.model';
-import {LeaveService} from '../service/leave.service';
+import { ILeave } from '../leave.model';
+import { LeaveService } from '../service/leave.service';
 
 @Component({
   templateUrl: './leave-delete-dialog.component.html',

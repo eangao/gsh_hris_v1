@@ -1,18 +1,18 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {FormBuilder, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {finalize, map} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize, map } from 'rxjs/operators';
 
-import {Employee, IEmployee} from '../employee.model';
-import {EmployeeService} from '../service/employee.service';
-import {IUser} from 'app/entities/user/user.model';
-import {UserService} from 'app/entities/user/user.service';
-import {IDepartment} from 'app/entities/department/department.model';
-import {DepartmentService} from 'app/entities/department/service/department.service';
-import {IEmploymentType} from 'app/entities/employment-type/employment-type.model';
-import {EmploymentTypeService} from 'app/entities/employment-type/service/employment-type.service';
+import { IEmployee, Employee } from '../employee.model';
+import { EmployeeService } from '../service/employee.service';
+import { IUser } from 'app/entities/user/user.model';
+import { UserService } from 'app/entities/user/user.service';
+import { IDepartment } from 'app/entities/department/department.model';
+import { DepartmentService } from 'app/entities/department/service/department.service';
+import { IEmploymentType } from 'app/entities/employment-type/employment-type.model';
+import { EmploymentTypeService } from 'app/entities/employment-type/service/employment-type.service';
 
 @Component({
   selector: 'jhi-employee-update',
@@ -27,8 +27,8 @@ export class EmployeeUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    employeeId: [],
-    username: [null, [Validators.minLength(6), Validators.maxLength(30)]],
+    employeeId: [null, [Validators.required]],
+    username: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(30)]],
     firstName: [null, [Validators.maxLength(50)]],
     middleName: [null, [Validators.maxLength(50)]],
     lastName: [null, [Validators.maxLength(50)]],

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IEmployee} from '../employee.model';
+import { IEmployee } from '../employee.model';
 
 @Component({
   selector: 'jhi-employee-detail',

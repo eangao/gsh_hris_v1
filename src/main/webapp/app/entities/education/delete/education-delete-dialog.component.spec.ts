@@ -1,14 +1,14 @@
 jest.mock('@ng-bootstrap/ng-bootstrap');
 
-import {ComponentFixture, fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {of} from 'rxjs';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { ComponentFixture, TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { of } from 'rxjs';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {EducationService} from '../service/education.service';
+import { EducationService } from '../service/education.service';
 
-import {EducationDeleteDialogComponent} from './education-delete-dialog.component';
+import { EducationDeleteDialogComponent } from './education-delete-dialog.component';
 
 describe('Component Tests', () => {
   describe('Education Management Delete Component', () => {

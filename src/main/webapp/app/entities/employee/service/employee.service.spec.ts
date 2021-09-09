@@ -1,11 +1,11 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import * as dayjs from 'dayjs';
 
-import {DATE_FORMAT} from 'app/config/input.constants';
-import {Employee, IEmployee} from '../employee.model';
+import { DATE_FORMAT } from 'app/config/input.constants';
+import { IEmployee, Employee } from '../employee.model';
 
-import {EmployeeService} from './employee.service';
+import { EmployeeService } from './employee.service';
 
 describe('Service Tests', () => {
   describe('Employee Service', () => {

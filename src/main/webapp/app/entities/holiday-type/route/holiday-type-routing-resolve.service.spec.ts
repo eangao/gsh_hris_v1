@@ -1,15 +1,15 @@
 jest.mock('@angular/router');
 
-import {TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRouteSnapshot, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {HolidayType, IHolidayType} from '../holiday-type.model';
-import {HolidayTypeService} from '../service/holiday-type.service';
+import { IHolidayType, HolidayType } from '../holiday-type.model';
+import { HolidayTypeService } from '../service/holiday-type.service';
 
-import {HolidayTypeRoutingResolveService} from './holiday-type-routing-resolve.service';
+import { HolidayTypeRoutingResolveService } from './holiday-type-routing-resolve.service';
 
 describe('Service Tests', () => {
   describe('HolidayType routing resolve service', () => {

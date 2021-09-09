@@ -1,11 +1,11 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import * as dayjs from 'dayjs';
 
-import {DATE_TIME_FORMAT} from 'app/config/input.constants';
-import {DutySchedule, IDutySchedule} from '../duty-schedule.model';
+import { DATE_TIME_FORMAT } from 'app/config/input.constants';
+import { IDutySchedule, DutySchedule } from '../duty-schedule.model';
 
-import {DutyScheduleService} from './duty-schedule.service';
+import { DutyScheduleService } from './duty-schedule.service';
 
 describe('Service Tests', () => {
   describe('DutySchedule Service', () => {

@@ -1,5 +1,5 @@
 import * as dayjs from 'dayjs';
-import {IEmployee} from 'app/entities/employee/employee.model';
+import { IEmployee } from 'app/entities/employee/employee.model';
 
 export interface IDailyTimeRecord {
   id?: number;

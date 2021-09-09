@@ -1,15 +1,15 @@
 jest.mock('@angular/router');
 
-import {TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRouteSnapshot, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {DutySchedule, IDutySchedule} from '../duty-schedule.model';
-import {DutyScheduleService} from '../service/duty-schedule.service';
+import { IDutySchedule, DutySchedule } from '../duty-schedule.model';
+import { DutyScheduleService } from '../service/duty-schedule.service';
 
-import {DutyScheduleRoutingResolveService} from './duty-schedule-routing-resolve.service';
+import { DutyScheduleRoutingResolveService } from './duty-schedule-routing-resolve.service';
 
 describe('Service Tests', () => {
   describe('DutySchedule routing resolve service', () => {

@@ -1,9 +1,9 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import {IPosition, Position} from '../position.model';
+import { IPosition, Position } from '../position.model';
 
-import {PositionService} from './position.service';
+import { PositionService } from './position.service';
 
 describe('Service Tests', () => {
   describe('Position Service', () => {

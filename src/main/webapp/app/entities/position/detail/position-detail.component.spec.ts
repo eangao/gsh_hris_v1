@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {ActivatedRoute} from '@angular/router';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
-import {PositionDetailComponent} from './position-detail.component';
+import { PositionDetailComponent } from './position-detail.component';
 
 describe('Component Tests', () => {
   describe('Position Management Detail Component', () => {

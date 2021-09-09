@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {ActivatedRoute} from '@angular/router';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
-import {TrainingHistoryDetailComponent} from './training-history-detail.component';
+import { TrainingHistoryDetailComponent } from './training-history-detail.component';
 
 describe('Component Tests', () => {
   describe('TrainingHistory Management Detail Component', () => {

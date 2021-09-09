@@ -1,9 +1,9 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import {Education, IEducation} from '../education.model';
+import { IEducation, Education } from '../education.model';
 
-import {EducationService} from './education.service';
+import { EducationService } from './education.service';
 
 describe('Service Tests', () => {
   describe('Education Service', () => {

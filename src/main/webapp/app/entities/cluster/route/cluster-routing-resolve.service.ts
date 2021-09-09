@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
-import {EMPTY, Observable, of} from 'rxjs';
-import {mergeMap} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Observable, of, EMPTY } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
-import {Cluster, ICluster} from '../cluster.model';
-import {ClusterService} from '../service/cluster.service';
+import { ICluster, Cluster } from '../cluster.model';
+import { ClusterService } from '../service/cluster.service';
 
 @Injectable({ providedIn: 'root' })
 export class ClusterRoutingResolveService implements Resolve<ICluster> {

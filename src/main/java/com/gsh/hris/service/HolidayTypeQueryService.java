@@ -1,11 +1,13 @@
 package com.gsh.hris.service;
 
+import com.gsh.hris.domain.*; // for static metamodels
 import com.gsh.hris.domain.HolidayType;
-import com.gsh.hris.domain.HolidayType_;
 import com.gsh.hris.repository.HolidayTypeRepository;
 import com.gsh.hris.service.criteria.HolidayTypeCriteria;
 import com.gsh.hris.service.dto.HolidayTypeDTO;
 import com.gsh.hris.service.mapper.HolidayTypeMapper;
+import java.util.List;
+import javax.persistence.criteria.JoinType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -14,8 +16,6 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
-
-import java.util.List;
 
 /**
  * Service for executing complex queries for {@link HolidayType} entities in the database.

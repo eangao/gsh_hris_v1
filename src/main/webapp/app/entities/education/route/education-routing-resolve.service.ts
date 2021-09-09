@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
-import {EMPTY, Observable, of} from 'rxjs';
-import {mergeMap} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Observable, of, EMPTY } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
-import {Education, IEducation} from '../education.model';
-import {EducationService} from '../service/education.service';
+import { IEducation, Education } from '../education.model';
+import { EducationService } from '../service/education.service';
 
 @Injectable({ providedIn: 'root' })
 export class EducationRoutingResolveService implements Resolve<IEducation> {

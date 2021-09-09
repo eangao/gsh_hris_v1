@@ -1,19 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {FormBuilder, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {finalize, map} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize, map } from 'rxjs/operators';
 
-import {ILeave, Leave} from '../leave.model';
-import {LeaveService} from '../service/leave.service';
-import {AlertError} from 'app/shared/alert/alert-error.model';
-import {EventManager, EventWithContent} from 'app/core/util/event-manager.service';
-import {DataUtils, FileLoadError} from 'app/core/util/data-util.service';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {EmployeeService} from 'app/entities/employee/service/employee.service';
-import {ILeaveType} from 'app/entities/leave-type/leave-type.model';
-import {LeaveTypeService} from 'app/entities/leave-type/service/leave-type.service';
+import { ILeave, Leave } from '../leave.model';
+import { LeaveService } from '../service/leave.service';
+import { AlertError } from 'app/shared/alert/alert-error.model';
+import { EventManager, EventWithContent } from 'app/core/util/event-manager.service';
+import { DataUtils, FileLoadError } from 'app/core/util/data-util.service';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { EmployeeService } from 'app/entities/employee/service/employee.service';
+import { ILeaveType } from 'app/entities/leave-type/leave-type.model';
+import { LeaveTypeService } from 'app/entities/leave-type/service/leave-type.service';
 
 @Component({
   selector: 'jhi-leave-update',

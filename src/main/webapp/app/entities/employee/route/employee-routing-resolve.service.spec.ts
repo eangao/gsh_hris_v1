@@ -1,15 +1,15 @@
 jest.mock('@angular/router');
 
-import {TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRouteSnapshot, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {Employee, IEmployee} from '../employee.model';
-import {EmployeeService} from '../service/employee.service';
+import { IEmployee, Employee } from '../employee.model';
+import { EmployeeService } from '../service/employee.service';
 
-import {EmployeeRoutingResolveService} from './employee-routing-resolve.service';
+import { EmployeeRoutingResolveService } from './employee-routing-resolve.service';
 
 describe('Service Tests', () => {
   describe('Employee routing resolve service', () => {

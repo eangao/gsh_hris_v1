@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {UserRouteAccessService} from 'app/core/auth/user-route-access.service';
-import {EmployeeComponent} from '../list/employee.component';
-import {EmployeeDetailComponent} from '../detail/employee-detail.component';
-import {EmployeeUpdateComponent} from '../update/employee-update.component';
-import {EmployeeRoutingResolveService} from './employee-routing-resolve.service';
+import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { EmployeeComponent } from '../list/employee.component';
+import { EmployeeDetailComponent } from '../detail/employee-detail.component';
+import { EmployeeUpdateComponent } from '../update/employee-update.component';
+import { EmployeeRoutingResolveService } from './employee-routing-resolve.service';
 
 const employeeRoute: Routes = [
   {

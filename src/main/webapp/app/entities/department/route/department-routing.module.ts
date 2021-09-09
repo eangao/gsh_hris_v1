@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {UserRouteAccessService} from 'app/core/auth/user-route-access.service';
-import {DepartmentComponent} from '../list/department.component';
-import {DepartmentDetailComponent} from '../detail/department-detail.component';
-import {DepartmentUpdateComponent} from '../update/department-update.component';
-import {DepartmentRoutingResolveService} from './department-routing-resolve.service';
+import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { DepartmentComponent } from '../list/department.component';
+import { DepartmentDetailComponent } from '../detail/department-detail.component';
+import { DepartmentUpdateComponent } from '../update/department-update.component';
+import { DepartmentRoutingResolveService } from './department-routing-resolve.service';
 
 const departmentRoute: Routes = [
   {

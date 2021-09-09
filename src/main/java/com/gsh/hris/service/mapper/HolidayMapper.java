@@ -1,8 +1,8 @@
 package com.gsh.hris.service.mapper;
 
-import com.gsh.hris.domain.Holiday;
+import com.gsh.hris.domain.*;
 import com.gsh.hris.service.dto.HolidayDTO;
-import org.mapstruct.Mapper;
+import org.mapstruct.*;
 
 /**
  * Mapper for the entity {@link Holiday} and its DTO {@link HolidayDTO}.

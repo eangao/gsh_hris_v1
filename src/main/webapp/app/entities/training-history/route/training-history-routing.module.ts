@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {UserRouteAccessService} from 'app/core/auth/user-route-access.service';
-import {TrainingHistoryComponent} from '../list/training-history.component';
-import {TrainingHistoryDetailComponent} from '../detail/training-history-detail.component';
-import {TrainingHistoryUpdateComponent} from '../update/training-history-update.component';
-import {TrainingHistoryRoutingResolveService} from './training-history-routing-resolve.service';
+import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { TrainingHistoryComponent } from '../list/training-history.component';
+import { TrainingHistoryDetailComponent } from '../detail/training-history-detail.component';
+import { TrainingHistoryUpdateComponent } from '../update/training-history-update.component';
+import { TrainingHistoryRoutingResolveService } from './training-history-routing-resolve.service';
 
 const trainingHistoryRoute: Routes = [
   {

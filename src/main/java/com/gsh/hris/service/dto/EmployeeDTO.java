@@ -1,9 +1,9 @@
 package com.gsh.hris.service.dto;
 
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
+import javax.validation.constraints.*;
 
 /**
  * A DTO for the {@link com.gsh.hris.domain.Employee} entity.
@@ -12,8 +12,10 @@ public class EmployeeDTO implements Serializable {
 
     private Long id;
 
+    @NotNull
     private Integer employeeId;
 
+    @NotNull
     @Size(min = 6, max = 30)
     private String username;
 

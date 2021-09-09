@@ -1,18 +1,18 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {of, Subject} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of, Subject } from 'rxjs';
 
-import {DailyTimeRecordService} from '../service/daily-time-record.service';
-import {DailyTimeRecord, IDailyTimeRecord} from '../daily-time-record.model';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {EmployeeService} from 'app/entities/employee/service/employee.service';
+import { DailyTimeRecordService } from '../service/daily-time-record.service';
+import { IDailyTimeRecord, DailyTimeRecord } from '../daily-time-record.model';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { EmployeeService } from 'app/entities/employee/service/employee.service';
 
-import {DailyTimeRecordUpdateComponent} from './daily-time-record-update.component';
+import { DailyTimeRecordUpdateComponent } from './daily-time-record-update.component';
 
 describe('Component Tests', () => {
   describe('DailyTimeRecord Management Update Component', () => {

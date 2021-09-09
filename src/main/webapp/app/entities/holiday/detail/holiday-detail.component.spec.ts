@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {ActivatedRoute} from '@angular/router';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
-import {HolidayDetailComponent} from './holiday-detail.component';
+import { HolidayDetailComponent } from './holiday-detail.component';
 
 describe('Component Tests', () => {
   describe('Holiday Management Detail Component', () => {

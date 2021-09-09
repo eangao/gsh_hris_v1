@@ -1,16 +1,16 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {of, Subject} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of, Subject } from 'rxjs';
 
-import {EmploymentTypeService} from '../service/employment-type.service';
-import {EmploymentType, IEmploymentType} from '../employment-type.model';
+import { EmploymentTypeService } from '../service/employment-type.service';
+import { IEmploymentType, EmploymentType } from '../employment-type.model';
 
-import {EmploymentTypeUpdateComponent} from './employment-type-update.component';
+import { EmploymentTypeUpdateComponent } from './employment-type-update.component';
 
 describe('Component Tests', () => {
   describe('EmploymentType Management Update Component', () => {

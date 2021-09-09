@@ -1,11 +1,11 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import * as dayjs from 'dayjs';
 
-import {DATE_FORMAT} from 'app/config/input.constants';
-import {Holiday, IHoliday} from '../holiday.model';
+import { DATE_FORMAT } from 'app/config/input.constants';
+import { IHoliday, Holiday } from '../holiday.model';
 
-import {HolidayService} from './holiday.service';
+import { HolidayService } from './holiday.service';
 
 describe('Service Tests', () => {
   describe('Holiday Service', () => {

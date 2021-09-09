@@ -3,12 +3,13 @@
   "fields": [
     {
       "fieldName": "employeeId",
-      "fieldType": "Integer"
+      "fieldType": "Integer",
+      "fieldValidateRules": ["unique", "required"]
     },
     {
       "fieldName": "username",
       "fieldType": "String",
-      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRules": ["minlength", "maxlength", "unique", "required"],
       "fieldValidateRulesMinlength": "6",
       "fieldValidateRulesMaxlength": "30"
     },
@@ -51,7 +52,7 @@
     {
       "fieldName": "email",
       "fieldType": "String",
-      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRules": ["maxlength", "unique"],
       "fieldValidateRulesMaxlength": "50"
     },
     {

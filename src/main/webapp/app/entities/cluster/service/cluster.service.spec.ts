@@ -1,9 +1,9 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import {Cluster, ICluster} from '../cluster.model';
+import { ICluster, Cluster } from '../cluster.model';
 
-import {ClusterService} from './cluster.service';
+import { ClusterService } from './cluster.service';
 
 describe('Service Tests', () => {
   describe('Cluster Service', () => {

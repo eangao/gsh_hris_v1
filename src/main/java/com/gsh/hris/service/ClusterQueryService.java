@@ -1,12 +1,13 @@
 package com.gsh.hris.service;
 
+import com.gsh.hris.domain.*; // for static metamodels
 import com.gsh.hris.domain.Cluster;
-import com.gsh.hris.domain.Cluster_;
-import com.gsh.hris.domain.Department_;
 import com.gsh.hris.repository.ClusterRepository;
 import com.gsh.hris.service.criteria.ClusterCriteria;
 import com.gsh.hris.service.dto.ClusterDTO;
 import com.gsh.hris.service.mapper.ClusterMapper;
+import java.util.List;
+import javax.persistence.criteria.JoinType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -15,9 +16,6 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
-
-import javax.persistence.criteria.JoinType;
-import java.util.List;
 
 /**
  * Service for executing complex queries for {@link Cluster} entities in the database.

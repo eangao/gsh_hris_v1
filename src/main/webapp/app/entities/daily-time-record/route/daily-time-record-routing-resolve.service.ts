@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
-import {EMPTY, Observable, of} from 'rxjs';
-import {mergeMap} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Observable, of, EMPTY } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
-import {DailyTimeRecord, IDailyTimeRecord} from '../daily-time-record.model';
-import {DailyTimeRecordService} from '../service/daily-time-record.service';
+import { IDailyTimeRecord, DailyTimeRecord } from '../daily-time-record.model';
+import { DailyTimeRecordService } from '../service/daily-time-record.service';
 
 @Injectable({ providedIn: 'root' })
 export class DailyTimeRecordRoutingResolveService implements Resolve<IDailyTimeRecord> {

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IHolidayType} from '../holiday-type.model';
+import { IHolidayType } from '../holiday-type.model';
 
 @Component({
   selector: 'jhi-holiday-type-detail',

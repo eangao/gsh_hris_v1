@@ -13,14 +13,13 @@ import com.gsh.hris.service.mapper.EmployeeMapper;
 import com.gsh.hris.web.rest.errors.BadRequestAlertException;
 import com.gsh.hris.web.rest.errors.EmailAlreadyUsedException;
 import com.gsh.hris.web.rest.errors.LoginAlreadyUsedException;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 /**
  * Service Implementation for managing {@link Employee}.
@@ -41,11 +40,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final MailService mailService;
 
-    public EmployeeServiceImpl(EmployeeRepository employeeRepository,
-                               EmployeeMapper employeeMapper,
-                               UserService userService,
-                               UserRepository userRepository,
-                               MailService mailService) {
+    public EmployeeServiceImpl(
+        EmployeeRepository employeeRepository,
+        EmployeeMapper employeeMapper,
+        UserService userService,
+        UserRepository userRepository,
+        MailService mailService
+    ) {
         this.employeeRepository = employeeRepository;
         this.employeeMapper = employeeMapper;
         this.userService = userService;
@@ -72,7 +73,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             User newUser = userService.createUser(userDTO);
 
             Employee employee = employeeMapper.toEntity(employeeDTO);
-            employee.setUser(newUser);//to map user to employee
+            employee.setUser(newUser); //to map user to employee
             employee = employeeRepository.save(employee);
 
             mailService.sendCreationEmail(newUser);

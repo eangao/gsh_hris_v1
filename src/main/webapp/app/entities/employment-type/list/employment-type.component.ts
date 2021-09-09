@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {ActivatedRoute, Router} from '@angular/router';
-import {combineLatest} from 'rxjs';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IEmploymentType} from '../employment-type.model';
+import { IEmploymentType } from '../employment-type.model';
 
-import {ASC, DESC, ITEMS_PER_PAGE, SORT} from 'app/config/pagination.constants';
-import {EmploymentTypeService} from '../service/employment-type.service';
-import {EmploymentTypeDeleteDialogComponent} from '../delete/employment-type-delete-dialog.component';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/config/pagination.constants';
+import { EmploymentTypeService } from '../service/employment-type.service';
+import { EmploymentTypeDeleteDialogComponent } from '../delete/employment-type-delete-dialog.component';
 
 @Component({
   selector: 'jhi-employment-type',

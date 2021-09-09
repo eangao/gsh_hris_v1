@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IDailyTimeRecord} from '../daily-time-record.model';
+import { IDailyTimeRecord } from '../daily-time-record.model';
 
 @Component({
   selector: 'jhi-daily-time-record-detail',

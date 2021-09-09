@@ -1,10 +1,9 @@
 package com.gsh.hris.domain;
 
+import java.io.Serializable;
+import javax.persistence.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.*;
-import java.io.Serializable;
 
 /**
  * A HolidayType.

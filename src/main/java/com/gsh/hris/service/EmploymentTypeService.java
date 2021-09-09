@@ -1,10 +1,9 @@
 package com.gsh.hris.service;
 
 import com.gsh.hris.service.dto.EmploymentTypeDTO;
+import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-
-import java.util.Optional;
 
 /**
  * Service Interface for managing {@link com.gsh.hris.domain.EmploymentType}.

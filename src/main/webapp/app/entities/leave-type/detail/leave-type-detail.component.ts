@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {ILeaveType} from '../leave-type.model';
+import { ILeaveType } from '../leave-type.model';
 
 @Component({
   selector: 'jhi-leave-type-detail',

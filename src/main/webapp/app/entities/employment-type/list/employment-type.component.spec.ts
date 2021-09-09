@@ -1,14 +1,14 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRoute, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {EmploymentTypeService} from '../service/employment-type.service';
+import { EmploymentTypeService } from '../service/employment-type.service';
 
-import {EmploymentTypeComponent} from './employment-type.component';
+import { EmploymentTypeComponent } from './employment-type.component';
 
 describe('Component Tests', () => {
   describe('EmploymentType Management Component', () => {

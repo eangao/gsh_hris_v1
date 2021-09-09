@@ -1,15 +1,15 @@
 jest.mock('@angular/router');
 
-import {TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRouteSnapshot, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {Benefits, IBenefits} from '../benefits.model';
-import {BenefitsService} from '../service/benefits.service';
+import { IBenefits, Benefits } from '../benefits.model';
+import { BenefitsService } from '../service/benefits.service';
 
-import {BenefitsRoutingResolveService} from './benefits-routing-resolve.service';
+import { BenefitsRoutingResolveService } from './benefits-routing-resolve.service';
 
 describe('Service Tests', () => {
   describe('Benefits routing resolve service', () => {

@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpResponse} from '@angular/common/http';
-import {FormBuilder, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {finalize} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
-import {Cluster, ICluster} from '../cluster.model';
-import {ClusterService} from '../service/cluster.service';
+import { ICluster, Cluster } from '../cluster.model';
+import { ClusterService } from '../service/cluster.service';
 
 @Component({
   selector: 'jhi-cluster-update',

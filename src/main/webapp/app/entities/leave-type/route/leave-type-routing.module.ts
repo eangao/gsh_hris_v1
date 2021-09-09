@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {UserRouteAccessService} from 'app/core/auth/user-route-access.service';
-import {LeaveTypeComponent} from '../list/leave-type.component';
-import {LeaveTypeDetailComponent} from '../detail/leave-type-detail.component';
-import {LeaveTypeUpdateComponent} from '../update/leave-type-update.component';
-import {LeaveTypeRoutingResolveService} from './leave-type-routing-resolve.service';
+import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { LeaveTypeComponent } from '../list/leave-type.component';
+import { LeaveTypeDetailComponent } from '../detail/leave-type-detail.component';
+import { LeaveTypeUpdateComponent } from '../update/leave-type-update.component';
+import { LeaveTypeRoutingResolveService } from './leave-type-routing-resolve.service';
 
 const leaveTypeRoute: Routes = [
   {

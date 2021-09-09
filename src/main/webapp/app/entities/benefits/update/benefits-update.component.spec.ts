@@ -1,18 +1,18 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {of, Subject} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of, Subject } from 'rxjs';
 
-import {BenefitsService} from '../service/benefits.service';
-import {Benefits, IBenefits} from '../benefits.model';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {EmployeeService} from 'app/entities/employee/service/employee.service';
+import { BenefitsService } from '../service/benefits.service';
+import { IBenefits, Benefits } from '../benefits.model';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { EmployeeService } from 'app/entities/employee/service/employee.service';
 
-import {BenefitsUpdateComponent} from './benefits-update.component';
+import { BenefitsUpdateComponent } from './benefits-update.component';
 
 describe('Component Tests', () => {
   describe('Benefits Management Update Component', () => {

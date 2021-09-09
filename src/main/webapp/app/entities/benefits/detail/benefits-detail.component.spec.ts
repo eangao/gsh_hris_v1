@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {ActivatedRoute} from '@angular/router';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
-import {BenefitsDetailComponent} from './benefits-detail.component';
+import { BenefitsDetailComponent } from './benefits-detail.component';
 
 describe('Component Tests', () => {
   describe('Benefits Management Detail Component', () => {

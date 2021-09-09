@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IDailyTimeRecord} from '../daily-time-record.model';
-import {DailyTimeRecordService} from '../service/daily-time-record.service';
+import { IDailyTimeRecord } from '../daily-time-record.model';
+import { DailyTimeRecordService } from '../service/daily-time-record.service';
 
 @Component({
   templateUrl: './daily-time-record-delete-dialog.component.html',

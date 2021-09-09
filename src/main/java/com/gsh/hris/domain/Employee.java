@@ -1,16 +1,14 @@
 package com.gsh.hris.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.*;
+import javax.validation.constraints.*;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
  * A Employee.
@@ -26,11 +24,13 @@ public class Employee implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "employee_id")
+    @NotNull
+    @Column(name = "employee_id", nullable = false, unique = true)
     private Integer employeeId;
 
+    @NotNull
     @Size(min = 6, max = 30)
-    @Column(name = "username", length = 30)
+    @Column(name = "username", length = 30, nullable = false, unique = true)
     private String username;
 
     @Size(max = 50)
@@ -59,7 +59,7 @@ public class Employee implements Serializable {
     private String mobileNumber;
 
     @Size(max = 50)
-    @Column(name = "email", length = 50)
+    @Column(name = "email", length = 50, unique = true)
     private String email;
 
     @Column(name = "is_not_locked")

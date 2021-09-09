@@ -1,14 +1,14 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRoute, Router} from '@angular/router';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import { of } from 'rxjs';
 
-import {HolidayTypeService} from '../service/holiday-type.service';
+import { HolidayTypeService } from '../service/holiday-type.service';
 
-import {HolidayTypeComponent} from './holiday-type.component';
+import { HolidayTypeComponent } from './holiday-type.component';
 
 describe('Component Tests', () => {
   describe('HolidayType Management Component', () => {

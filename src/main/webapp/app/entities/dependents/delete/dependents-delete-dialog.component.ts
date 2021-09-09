@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IDependents} from '../dependents.model';
-import {DependentsService} from '../service/dependents.service';
+import { IDependents } from '../dependents.model';
+import { DependentsService } from '../service/dependents.service';
 
 @Component({
   templateUrl: './dependents-delete-dialog.component.html',

@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
-import {ActivatedRoute, Router} from '@angular/router';
-import {combineLatest} from 'rxjs';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IDailyTimeRecord} from '../daily-time-record.model';
+import { IDailyTimeRecord } from '../daily-time-record.model';
 
-import {ASC, DESC, ITEMS_PER_PAGE, SORT} from 'app/config/pagination.constants';
-import {DailyTimeRecordService} from '../service/daily-time-record.service';
-import {DailyTimeRecordDeleteDialogComponent} from '../delete/daily-time-record-delete-dialog.component';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/config/pagination.constants';
+import { DailyTimeRecordService } from '../service/daily-time-record.service';
+import { DailyTimeRecordDeleteDialogComponent } from '../delete/daily-time-record-delete-dialog.component';
 
 @Component({
   selector: 'jhi-daily-time-record',

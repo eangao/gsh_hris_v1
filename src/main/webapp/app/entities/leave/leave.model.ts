@@ -1,6 +1,6 @@
 import * as dayjs from 'dayjs';
-import {IEmployee} from 'app/entities/employee/employee.model';
-import {ILeaveType} from 'app/entities/leave-type/leave-type.model';
+import { IEmployee } from 'app/entities/employee/employee.model';
+import { ILeaveType } from 'app/entities/leave-type/leave-type.model';
 
 export interface ILeave {
   id?: number;

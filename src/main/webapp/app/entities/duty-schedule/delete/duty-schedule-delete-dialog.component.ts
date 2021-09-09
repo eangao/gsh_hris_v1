@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {IDutySchedule} from '../duty-schedule.model';
-import {DutyScheduleService} from '../service/duty-schedule.service';
+import { IDutySchedule } from '../duty-schedule.model';
+import { DutyScheduleService } from '../service/duty-schedule.service';
 
 @Component({
   templateUrl: './duty-schedule-delete-dialog.component.html',

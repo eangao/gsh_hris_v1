@@ -1,4 +1,4 @@
-import {ILeave} from 'app/entities/leave/leave.model';
+import { ILeave } from 'app/entities/leave/leave.model';
 
 export interface ILeaveType {
   id?: number;

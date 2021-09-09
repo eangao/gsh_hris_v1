@@ -1,23 +1,23 @@
 jest.mock('@angular/router');
 
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {of, Subject} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of, Subject } from 'rxjs';
 
-import {EmployeeService} from '../service/employee.service';
-import {Employee, IEmployee} from '../employee.model';
+import { EmployeeService } from '../service/employee.service';
+import { IEmployee, Employee } from '../employee.model';
 
-import {IUser} from 'app/entities/user/user.model';
-import {UserService} from 'app/entities/user/user.service';
-import {IDepartment} from 'app/entities/department/department.model';
-import {DepartmentService} from 'app/entities/department/service/department.service';
-import {IEmploymentType} from 'app/entities/employment-type/employment-type.model';
-import {EmploymentTypeService} from 'app/entities/employment-type/service/employment-type.service';
+import { IUser } from 'app/entities/user/user.model';
+import { UserService } from 'app/entities/user/user.service';
+import { IDepartment } from 'app/entities/department/department.model';
+import { DepartmentService } from 'app/entities/department/service/department.service';
+import { IEmploymentType } from 'app/entities/employment-type/employment-type.model';
+import { EmploymentTypeService } from 'app/entities/employment-type/service/employment-type.service';
 
-import {EmployeeUpdateComponent} from './employee-update.component';
+import { EmployeeUpdateComponent } from './employee-update.component';
 
 describe('Component Tests', () => {
   describe('Employee Management Update Component', () => {

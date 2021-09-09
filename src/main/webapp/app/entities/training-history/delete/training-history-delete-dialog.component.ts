@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {ITrainingHistory} from '../training-history.model';
-import {TrainingHistoryService} from '../service/training-history.service';
+import { ITrainingHistory } from '../training-history.model';
+import { TrainingHistoryService } from '../service/training-history.service';
 
 @Component({
   templateUrl: './training-history-delete-dialog.component.html',

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IEducation} from '../education.model';
+import { IEducation } from '../education.model';
 
 @Component({
   selector: 'jhi-education-detail',

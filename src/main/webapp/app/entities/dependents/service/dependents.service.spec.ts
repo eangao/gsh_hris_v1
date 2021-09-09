@@ -1,9 +1,9 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import {Dependents, IDependents} from '../dependents.model';
+import { IDependents, Dependents } from '../dependents.model';
 
-import {DependentsService} from './dependents.service';
+import { DependentsService } from './dependents.service';
 
 describe('Service Tests', () => {
   describe('Dependents Service', () => {

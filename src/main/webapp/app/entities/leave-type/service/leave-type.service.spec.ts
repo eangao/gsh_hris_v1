@@ -1,9 +1,9 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import {ILeaveType, LeaveType} from '../leave-type.model';
+import { ILeaveType, LeaveType } from '../leave-type.model';
 
-import {LeaveTypeService} from './leave-type.service';
+import { LeaveTypeService } from './leave-type.service';
 
 describe('Service Tests', () => {
   describe('LeaveType Service', () => {

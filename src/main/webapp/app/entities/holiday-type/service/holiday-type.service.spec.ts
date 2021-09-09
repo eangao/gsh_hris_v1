@@ -1,9 +1,9 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import {HolidayType, IHolidayType} from '../holiday-type.model';
+import { IHolidayType, HolidayType } from '../holiday-type.model';
 
-import {HolidayTypeService} from './holiday-type.service';
+import { HolidayTypeService } from './holiday-type.service';
 
 describe('Service Tests', () => {
   describe('HolidayType Service', () => {

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IPosition} from '../position.model';
+import { IPosition } from '../position.model';
 
 @Component({
   selector: 'jhi-position-detail',

@@ -1,9 +1,9 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import {EmploymentType, IEmploymentType} from '../employment-type.model';
+import { IEmploymentType, EmploymentType } from '../employment-type.model';
 
-import {EmploymentTypeService} from './employment-type.service';
+import { EmploymentTypeService } from './employment-type.service';
 
 describe('Service Tests', () => {
   describe('EmploymentType Service', () => {

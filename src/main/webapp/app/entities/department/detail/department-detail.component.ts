@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IDepartment} from '../department.model';
+import { IDepartment } from '../department.model';
 
 @Component({
   selector: 'jhi-department-detail',

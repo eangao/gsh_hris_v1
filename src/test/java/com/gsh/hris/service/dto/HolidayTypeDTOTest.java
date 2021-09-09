@@ -1,9 +1,9 @@
 package com.gsh.hris.service.dto;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.gsh.hris.web.rest.TestUtil;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 class HolidayTypeDTOTest {
 

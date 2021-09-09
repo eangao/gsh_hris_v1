@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {UserRouteAccessService} from 'app/core/auth/user-route-access.service';
-import {HolidayComponent} from '../list/holiday.component';
-import {HolidayDetailComponent} from '../detail/holiday-detail.component';
-import {HolidayUpdateComponent} from '../update/holiday-update.component';
-import {HolidayRoutingResolveService} from './holiday-routing-resolve.service';
+import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { HolidayComponent } from '../list/holiday.component';
+import { HolidayDetailComponent } from '../detail/holiday-detail.component';
+import { HolidayUpdateComponent } from '../update/holiday-update.component';
+import { HolidayRoutingResolveService } from './holiday-routing-resolve.service';
 
 const holidayRoute: Routes = [
   {

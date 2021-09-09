@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IEmploymentType} from '../employment-type.model';
+import { IEmploymentType } from '../employment-type.model';
 
 @Component({
   selector: 'jhi-employment-type-detail',
