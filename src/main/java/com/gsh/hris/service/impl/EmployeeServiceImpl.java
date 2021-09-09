@@ -1,5 +1,6 @@
 package com.gsh.hris.service.impl;
 
+import com.gsh.hris.domain.Authority;
 import com.gsh.hris.domain.Employee;
 import com.gsh.hris.domain.User;
 import com.gsh.hris.repository.EmployeeRepository;
@@ -13,7 +14,10 @@ import com.gsh.hris.service.mapper.EmployeeMapper;
 import com.gsh.hris.web.rest.errors.BadRequestAlertException;
 import com.gsh.hris.web.rest.errors.EmailAlreadyUsedException;
 import com.gsh.hris.web.rest.errors.LoginAlreadyUsedException;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -61,6 +65,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         AdminUserDTO userDTO = new AdminUserDTO();
         userDTO.setLogin(employeeDTO.getUsername());
         userDTO.setEmail(employeeDTO.getEmail());
+        userDTO.setFirstName(employeeDTO.getFirstName());
+        userDTO.setLastName(employeeDTO.getLastName());
+
+        //to set the default user role
+        Set<String> role = new HashSet<>();
+        role.add("ROLE_USER");
+        userDTO.setAuthorities(role);
 
         if (userDTO.getId() != null) {
             throw new BadRequestAlertException("A new user cannot already have an ID", "userManagement", "idexists");
@@ -85,6 +96,31 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public EmployeeDTO update(EmployeeDTO employeeDTO) {
         log.debug("Request to update Employee : {}", employeeDTO);
+
+        Optional<User> userToUpdate = userRepository.findById(employeeDTO.getUser().getId());
+
+        AdminUserDTO userDTO = new AdminUserDTO();
+        userDTO.setId(employeeDTO.getUser().getId());
+        userDTO.setLogin(employeeDTO.getUsername());
+        userDTO.setEmail(employeeDTO.getEmail());
+        userDTO.setFirstName(employeeDTO.getFirstName());
+        userDTO.setLastName(employeeDTO.getLastName());
+        userDTO.setImageUrl(userToUpdate.get().getImageUrl());
+        userDTO.setActivated(userToUpdate.get().isActivated());
+        userDTO.setLangKey(userToUpdate.get().getLangKey());
+        userDTO.setAuthorities(userToUpdate.get().getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet()));
+
+        Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(employeeDTO.getEmail());
+        if (existingUser.isPresent() && (!existingUser.get().getId().equals(employeeDTO.getUser().getId()))) {
+            throw new EmailAlreadyUsedException();
+        }
+        existingUser = userRepository.findOneByLogin(employeeDTO.getUsername().toLowerCase());
+        if (existingUser.isPresent() && (!existingUser.get().getId().equals(employeeDTO.getUser().getId()))) {
+            throw new LoginAlreadyUsedException();
+        }
+
+        Optional<AdminUserDTO> updatedUser = userService.updateUser(userDTO);
+
         Employee employee = employeeMapper.toEntity(employeeDTO);
         employee = employeeRepository.save(employee);
         return employeeMapper.toDto(employee);
