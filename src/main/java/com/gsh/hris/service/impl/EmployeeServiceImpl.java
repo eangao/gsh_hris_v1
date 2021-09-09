@@ -79,8 +79,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
             return employeeMapper.toDto(employee);
         }
+    }
 
-
+    @Override
+    public EmployeeDTO update(EmployeeDTO employeeDTO) {
+        log.debug("Request to update Employee : {}", employeeDTO);
+        Employee employee = employeeMapper.toEntity(employeeDTO);
+        employee = employeeRepository.save(employee);
+        return employeeMapper.toDto(employee);
     }
 
     @Override
