@@ -7,17 +7,16 @@ import com.gsh.hris.service.MailService;
 import com.gsh.hris.service.UserService;
 import com.gsh.hris.service.dto.AdminUserDTO;
 import com.gsh.hris.service.dto.PasswordChangeDTO;
-import com.gsh.hris.service.dto.UserDTO;
-import com.gsh.hris.web.rest.errors.*;
+import com.gsh.hris.web.rest.errors.EmailAlreadyUsedException;
+import com.gsh.hris.web.rest.errors.InvalidPasswordException;
 import com.gsh.hris.web.rest.vm.KeyAndPasswordVM;
 import com.gsh.hris.web.rest.vm.ManagedUserVM;
-import java.util.*;
+import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -46,24 +45,6 @@ public class AccountResource {
         this.userRepository = userRepository;
         this.userService = userService;
         this.mailService = mailService;
-    }
-
-    /**
-     * {@code POST  /register} : register the user.
-     *
-     * @param managedUserVM the managed user View Model.
-     * @throws InvalidPasswordException {@code 400 (Bad Request)} if the password is incorrect.
-     * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is already used.
-     * @throws LoginAlreadyUsedException {@code 400 (Bad Request)} if the login is already used.
-     */
-    @PostMapping("/register")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM) {
-        if (isPasswordLengthInvalid(managedUserVM.getPassword())) {
-            throw new InvalidPasswordException();
-        }
-        User user = userService.registerUser(managedUserVM, managedUserVM.getPassword());
-        mailService.sendActivationEmail(user);
     }
 
     /**
