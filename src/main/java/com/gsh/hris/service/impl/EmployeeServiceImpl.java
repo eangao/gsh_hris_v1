@@ -97,29 +97,40 @@ public class EmployeeServiceImpl implements EmployeeService {
     public EmployeeDTO update(EmployeeDTO employeeDTO) {
         log.debug("Request to update Employee : {}", employeeDTO);
 
-        Optional<User> userToUpdate = userRepository.findById(employeeDTO.getUser().getId());
+        Optional<User> existingUser = userRepository.findById(employeeDTO.getUser().getId());
 
-        AdminUserDTO userDTO = new AdminUserDTO();
-        userDTO.setId(employeeDTO.getUser().getId());
-        userDTO.setLogin(employeeDTO.getUsername());
-        userDTO.setEmail(employeeDTO.getEmail());
-        userDTO.setFirstName(employeeDTO.getFirstName());
-        userDTO.setLastName(employeeDTO.getLastName());
-        userDTO.setImageUrl(userToUpdate.get().getImageUrl());
-        userDTO.setActivated(userToUpdate.get().isActivated());
-        userDTO.setLangKey(userToUpdate.get().getLangKey());
-        userDTO.setAuthorities(userToUpdate.get().getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet()));
+        //If username, email, firstname and lastname of employee is not equal
+        // in username, email, firstname and lastname of user update user
+        if (
+            !(
+                existingUser.get().getLogin().equals(employeeDTO.getUsername()) &&
+                existingUser.get().getEmail().equals(employeeDTO.getEmail()) &&
+                existingUser.get().getFirstName().equals(employeeDTO.getFirstName()) &&
+                existingUser.get().getLastName().equals(employeeDTO.getLastName())
+            )
+        ) {
+            AdminUserDTO userDTO = new AdminUserDTO();
+            userDTO.setId(employeeDTO.getUser().getId());
+            userDTO.setLogin(employeeDTO.getUsername());
+            userDTO.setEmail(employeeDTO.getEmail());
+            userDTO.setFirstName(employeeDTO.getFirstName());
+            userDTO.setLastName(employeeDTO.getLastName());
+            userDTO.setImageUrl(existingUser.get().getImageUrl());
+            userDTO.setActivated(existingUser.get().isActivated());
+            userDTO.setLangKey(existingUser.get().getLangKey());
+            userDTO.setAuthorities(existingUser.get().getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet()));
 
-        Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(employeeDTO.getEmail());
-        if (existingUser.isPresent() && (!existingUser.get().getId().equals(employeeDTO.getUser().getId()))) {
-            throw new EmailAlreadyUsedException();
+            existingUser = userRepository.findOneByEmailIgnoreCase(employeeDTO.getEmail());
+            if (existingUser.isPresent() && (!existingUser.get().getId().equals(employeeDTO.getUser().getId()))) {
+                throw new EmailAlreadyUsedException();
+            }
+            existingUser = userRepository.findOneByLogin(employeeDTO.getUsername().toLowerCase());
+            if (existingUser.isPresent() && (!existingUser.get().getId().equals(employeeDTO.getUser().getId()))) {
+                throw new LoginAlreadyUsedException();
+            }
+
+            userService.updateUser(userDTO);
         }
-        existingUser = userRepository.findOneByLogin(employeeDTO.getUsername().toLowerCase());
-        if (existingUser.isPresent() && (!existingUser.get().getId().equals(employeeDTO.getUser().getId()))) {
-            throw new LoginAlreadyUsedException();
-        }
-
-        Optional<AdminUserDTO> updatedUser = userService.updateUser(userDTO);
 
         Employee employee = employeeMapper.toEntity(employeeDTO);
         employee = employeeRepository.save(employee);
