@@ -2,18 +2,15 @@ package com.gsh.hris.web.rest;
 
 import com.gsh.hris.domain.User;
 import com.gsh.hris.repository.UserRepository;
-import com.gsh.hris.security.SecurityUtils;
 import com.gsh.hris.service.MailService;
 import com.gsh.hris.service.UserService;
 import com.gsh.hris.service.dto.AdminUserDTO;
 import com.gsh.hris.service.dto.PasswordChangeDTO;
-import com.gsh.hris.web.rest.errors.EmailAlreadyUsedException;
 import com.gsh.hris.web.rest.errors.InvalidPasswordException;
 import com.gsh.hris.web.rest.vm.KeyAndPasswordVM;
 import com.gsh.hris.web.rest.vm.ManagedUserVM;
 import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,35 +82,6 @@ public class AccountResource {
             .getUserWithAuthorities()
             .map(AdminUserDTO::new)
             .orElseThrow(() -> new AccountResourceException("User could not be found"));
-    }
-
-    /**
-     * {@code POST  /account} : update the current user information.
-     *
-     * @param userDTO the current user information.
-     * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is already used.
-     * @throws RuntimeException {@code 500 (Internal Server Error)} if the user login wasn't found.
-     */
-    @PostMapping("/account")
-    public void saveAccount(@Valid @RequestBody AdminUserDTO userDTO) {
-        String userLogin = SecurityUtils
-            .getCurrentUserLogin()
-            .orElseThrow(() -> new AccountResourceException("Current user login not found"));
-        Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(userDTO.getEmail());
-        if (existingUser.isPresent() && (!existingUser.get().getLogin().equalsIgnoreCase(userLogin))) {
-            throw new EmailAlreadyUsedException();
-        }
-        Optional<User> user = userRepository.findOneByLogin(userLogin);
-        if (!user.isPresent()) {
-            throw new AccountResourceException("User could not be found");
-        }
-        userService.updateUser(
-            userDTO.getFirstName(),
-            userDTO.getLastName(),
-            userDTO.getEmail(),
-            userDTO.getLangKey(),
-            userDTO.getImageUrl()
-        );
     }
 
     /**
