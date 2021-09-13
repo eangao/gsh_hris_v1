@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 
-import { IEmployee, Employee } from '../employee.model';
+import { Employee, IEmployee } from '../employee.model';
 import { EmployeeService } from '../service/employee.service';
 import { IUser } from 'app/entities/user/user.model';
 import { UserService } from 'app/entities/user/user.service';
@@ -28,7 +28,7 @@ export class EmployeeUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     employeeId: [null, [Validators.required]],
-    username: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(30)]],
+    username: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(50)]],
     firstName: [null, [Validators.maxLength(50)]],
     middleName: [null, [Validators.maxLength(50)]],
     lastName: [null, [Validators.maxLength(50)]],
@@ -36,7 +36,7 @@ export class EmployeeUpdateComponent implements OnInit {
     birthdate: [],
     sex: [],
     mobileNumber: [],
-    email: [null, [Validators.maxLength(50)]],
+    email: [null, [Validators.minLength(5), Validators.maxLength(254), Validators.email]],
     isNotLocked: [],
     dateHired: [],
     dateDeno: [],

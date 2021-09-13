@@ -13,7 +13,7 @@
 
         <div class="form-group">
           <label class="form-control-label">Login</label>
-          <input type="text" class="form-control" name="login" formControlName="login" />
+          <input type="text" class="form-control" name="login" formControlName="login" readonly />
 
           <div *ngIf="editForm.get('login')!.invalid && (editForm.get('login')!.dirty || editForm.get('login')!.touched)">
             <small class="form-text text-danger" *ngIf="editForm.get('login')?.errors?.required"> This field is required. </small>
@@ -30,7 +30,7 @@
 
         <div class="form-group">
           <label class="form-control-label">First Name</label>
-          <input type="text" class="form-control" name="firstName" formControlName="firstName" />
+          <input type="text" class="form-control" name="firstName" formControlName="firstName" readonly />
 
           <div *ngIf="editForm.get('firstName')!.invalid && (editForm.get('firstName')!.dirty || editForm.get('firstName')!.touched)">
             <small class="form-text text-danger" *ngIf="editForm.get('firstName')?.errors?.maxlength">
@@ -41,7 +41,7 @@
 
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text" class="form-control" name="lastName" formControlName="lastName" />
+          <input type="text" class="form-control" name="lastName" formControlName="lastName" readonly />
 
           <div *ngIf="editForm.get('lastName')!.invalid && (editForm.get('lastName')!.dirty || editForm.get('lastName')!.touched)">
             <small class="form-text text-danger" *ngIf="editForm.get('lastName')?.errors?.maxlength">
@@ -52,7 +52,7 @@
 
         <div class="form-group">
           <label class="form-control-label">Email</label>
-          <input type="email" class="form-control" name="email" formControlName="email" />
+          <input type="email" class="form-control" name="email" formControlName="email" readonly />
 
           <div *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
             <small class="form-text text-danger" *ngIf="editForm.get('email')?.errors?.required"> This field is required. </small>

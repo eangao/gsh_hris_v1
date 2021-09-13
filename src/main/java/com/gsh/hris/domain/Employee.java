@@ -6,7 +6,9 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -29,7 +31,7 @@ public class Employee implements Serializable {
     private Integer employeeId;
 
     @NotNull
-    @Size(min = 6, max = 30)
+    @Size(min = 6, max = 50)
     @Column(name = "username", length = 30, nullable = false, unique = true)
     private String username;
 
@@ -58,8 +60,9 @@ public class Employee implements Serializable {
     @Column(name = "mobile_number")
     private String mobileNumber;
 
-    @Size(max = 50)
-    @Column(name = "email", length = 50, unique = true)
+    @Email
+    @Size(min = 5, max = 254)
+    @Column(name = "email", length = 254, unique = true)
     private String email;
 
     @Column(name = "is_not_locked")
