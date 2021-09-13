@@ -7,13 +7,12 @@ import com.gsh.hris.security.AuthoritiesConstants;
 import com.gsh.hris.service.MailService;
 import com.gsh.hris.service.UserService;
 import com.gsh.hris.service.dto.AdminUserDTO;
-import com.gsh.hris.web.rest.errors.BadRequestAlertException;
 import com.gsh.hris.web.rest.errors.EmailAlreadyUsedException;
 import com.gsh.hris.web.rest.errors.LoginAlreadyUsedException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.*;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 import org.slf4j.Logger;
@@ -91,42 +90,6 @@ public class UserResource {
         this.userService = userService;
         this.userRepository = userRepository;
         this.mailService = mailService;
-    }
-
-    /**
-     * {@code POST  /admin/users}  : Creates a new user.
-     * <p>
-     * Creates a new user if the login and email are not already used, and sends an
-     * mail with an activation link.
-     * The user needs to be activated on creation.
-     *
-     * @param userDTO the user to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new user, or with status {@code 400 (Bad Request)} if the login or email is already in use.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     * @throws BadRequestAlertException {@code 400 (Bad Request)} if the login or email is already in use.
-     */
-    @PostMapping("/users")
-    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
-    public ResponseEntity<User> createUser(@Valid @RequestBody AdminUserDTO userDTO) throws URISyntaxException {
-        log.debug("REST request to save User : {}", userDTO);
-
-        if (userDTO.getId() != null) {
-            throw new BadRequestAlertException("A new user cannot already have an ID", "userManagement", "idexists");
-            // Lowercase the user login before comparing with database
-        } else if (userRepository.findOneByLogin(userDTO.getLogin().toLowerCase()).isPresent()) {
-            throw new LoginAlreadyUsedException();
-        } else if (userRepository.findOneByEmailIgnoreCase(userDTO.getEmail()).isPresent()) {
-            throw new EmailAlreadyUsedException();
-        } else {
-            User newUser = userService.createUser(userDTO);
-            mailService.sendCreationEmail(newUser);
-            return ResponseEntity
-                .created(new URI("/api/admin/users/" + newUser.getLogin()))
-                .headers(
-                    HeaderUtil.createAlert(applicationName, "A user is created with identifier " + newUser.getLogin(), newUser.getLogin())
-                )
-                .body(newUser);
-        }
     }
 
     /**
