@@ -60,12 +60,6 @@ export class UserManagementUpdateComponent implements OnInit {
         () => this.onSaveSuccess(),
         () => this.onSaveError()
       );
-    } else {
-      this.user.langKey = 'en';
-      this.userService.create(this.user).subscribe(
-        () => this.onSaveSuccess(),
-        () => this.onSaveError()
-      );
     }
   }
 

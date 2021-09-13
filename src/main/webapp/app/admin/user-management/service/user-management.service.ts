@@ -13,10 +13,6 @@ export class UserManagementService {
 
   constructor(private http: HttpClient, private applicationConfigService: ApplicationConfigService) {}
 
-  create(user: IUser): Observable<IUser> {
-    return this.http.post<IUser>(this.resourceUrl, user);
-  }
-
   update(user: IUser): Observable<IUser> {
     return this.http.put<IUser>(this.resourceUrl, user);
   }
