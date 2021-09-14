@@ -3,7 +3,8 @@ package com.gsh.hris.service.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * A DTO for the {@link com.gsh.hris.domain.Employee} entity.
@@ -16,7 +17,7 @@ public class EmployeeDTO implements Serializable {
     private Integer employeeId;
 
     @NotNull
-    @Size(min = 6, max = 30)
+    @Size(min = 3, max = 50)
     private String username;
 
     @Size(max = 50)
@@ -37,7 +38,7 @@ public class EmployeeDTO implements Serializable {
 
     private String mobileNumber;
 
-    @Size(max = 50)
+    @Size(max = 254)
     private String email;
 
     private Boolean isNotLocked;

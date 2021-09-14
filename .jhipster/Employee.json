@@ -10,8 +10,8 @@
       "fieldName": "username",
       "fieldType": "String",
       "fieldValidateRules": ["minlength", "maxlength", "unique", "required"],
-      "fieldValidateRulesMinlength": "6",
-      "fieldValidateRulesMaxlength": "30"
+      "fieldValidateRulesMinlength": "3",
+      "fieldValidateRulesMaxlength": "50"
     },
     {
       "fieldName": "firstName",
@@ -52,8 +52,9 @@
     {
       "fieldName": "email",
       "fieldType": "String",
-      "fieldValidateRules": ["maxlength", "unique"],
-      "fieldValidateRulesMaxlength": "50"
+      "fieldValidateRules": ["minlength", "maxlength", "unique"],
+      "fieldValidateRulesMinlength": "5",
+      "fieldValidateRulesMaxlength": "254"
     },
     {
       "fieldName": "isNotLocked",

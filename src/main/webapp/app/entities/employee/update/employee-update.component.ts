@@ -28,7 +28,7 @@ export class EmployeeUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     employeeId: [null, [Validators.required]],
-    username: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(50)]],
+    username: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
     firstName: [null, [Validators.maxLength(50)]],
     middleName: [null, [Validators.maxLength(50)]],
     lastName: [null, [Validators.maxLength(50)]],

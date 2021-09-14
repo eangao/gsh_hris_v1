@@ -35,7 +35,7 @@
           <div *ngIf="editForm.get('username')!.invalid && (editForm.get('username')!.dirty || editForm.get('username')!.touched)">
             <small class="form-text text-danger" *ngIf="editForm.get('username')?.errors?.required"> This field is required. </small>
             <small class="form-text text-danger" *ngIf="editForm.get('username')?.errors?.minlength">
-              This field is required to be at least 6 characters.
+              This field is required to be at least 3 characters.
             </small>
             <small class="form-text text-danger" *ngIf="editForm.get('username')?.errors?.maxlength">
               This field cannot be longer than 50 characters.
